@@ -1,0 +1,26 @@
+<html ng-app="Site">
+<head>
+<title>Team Old Spice</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<link href="style.css" rel="stylesheet" />
+
+
+</head>
+<body>
+<div id="container" ng-controller="AppController">
+	<ul class="navi">
+	<li>
+	<a href="/#/brief">Project Brief</a>
+	</li>
+	<li>
+	<a href="/#/inspirations">Inspirations</a>
+	</li>
+	</ul>
+	<div ng-view>
+	</div>
+</div>
+
+<script type="text/javascript" src="./js/angular.min.js"></script>
+<script type="text/javascript" src="./js/spice.js"></script>
+</body>
+</html>

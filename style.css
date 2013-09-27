@@ -1,0 +1,21 @@
+#container {
+	margin-left: 50px;
+}
+
+.item {
+	border: 1px dotted #CCC;
+	margin: 5px;
+	padding: 20px;
+	width: 900px;
+	overflow: hidden;
+
+}
+
+#container h2 {
+	margin-top: 0px;
+}
+
+.navi li {
+	list-style-type: none;
+	display: inline;
+}

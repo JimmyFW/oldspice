@@ -1,6 +1,13 @@
 <h1>{{ model.title }}</h1>
 <h2>{{ model.authors }}</h2>
 
+<ul>
+	<li><h3>Table of Contents</h3></li>
+	<li>
+		<a ng-click="scrollTo('narratives')">Narratives</a>
+	</li>
+</ul>
+
 <h3>What problem are you proposing to solve?  </h3>
 Family-style restaurants blend the traditional dining experience of tasty food and good company with an exciting and cooperative atmosphere. The result is a more dynamic and social experience intended to create an experience that can be shared with others. However, this interaction is often held back by the very thing used to create it: the traditional dining experience. Family-style restaurants assume that because traditional menus work in traditional dining, they can be seamlessly transferred to family-style dining with no consequences.
 This is not true. Deciding an order is an order of magnitude more complicated when done in a group. Many problems often arise when people are forced to consider the constraints others face. As such, the current system of determining the order at family-style restaurants is clumsy, obtuse, and mostly done in the minds of the customers. It does not need to be this way.
@@ -32,31 +39,24 @@ Notice how these groups are spread along the axes. Not only is there at least of
 <p>
 In our contextual inquiry, we came across numerous different perspectives of the family-style dining experience. As stated in the previous section, we synthesized much of the personal information to construct five unique persona groups. The remainder of this information was synthesized in an experience map. To understand many of the terms used in this map, please use our lexicon provided <a href="./#/lexicon">here</a></p>
 
+
+<p>
+	<img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="650" height="500" /></p>
 <div ng-controller="ModalDemoCtrl">
 
-<p><img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="650" height="500" /></p>
-
-
-
     <script type="text/ng-template" id="myModalContent.html">
+    	
         <div class="modal-header">
-            <h3> modal</h3>
+            <h3>Experience Map</h3>
         </div>
         <div class="modal-body">
-        
-            <ul>
-                <li ng-repeat="item in items">
-                    <a ng-click="selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
+		<img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="1350" height="900" /></p>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            
         </div>
     </script>
-
+    <div ng-include="myModalContent.html"></div>
     <button class="btn" ng-click="open()">Open me!</button>
     <div ng-show="selected">Selection from a modal: {{ selected }}</div>
 </div>
@@ -103,9 +103,11 @@ Carnita Wok hires a hit-team of world class designers to create an interactive e
 Jeremy overhears his friends talking about where they should have lunch, and he jumps at the chance to suggest the most recent restaurant he went to. Since Jeremy is considered the asian food expert, his friends immediately trust his judgement that the food served is nothing short of the best. But now that everyone is at the restaurant, it is up to Jeremy to ensure they are not disappointed. Jeremy has his own idea of what the stables are that they should definitely get, but it is his first time working with a group this large. Questions are tossed back and forth as to what is good. Corey and Jessica start a slight bicker over whether or not to have their rice with shrimp or chicken. When asked, Jeremy says they are both equally delicious. Karla seems far too insistent on having just a giant salad - which is not even Asian. She does not trust Jeremy as much as her other friends when it comes to food. In the end, Jeremy must make the executive decision, somehow ensure everyone gets what they want, while balancing it with enough of the best the restaurant has to offer for everyone to share. It does not help that portion size split between the group would vary between not enough and too much. As soon as he begins to order, he gets one of the dishes wrong, causing a shoutout from Mark. The food comes, but Jeremy suddenly remembers something else everyone should try and calls the waiter back to order one more dish. After the meal and slightly delayed edition, no one is disappointed, though Jeremy still has his host skills to polish for next time.</p>
 <p>
 Ideally, the collaboration and discussion phase would go more smoothly with less stress on Jeremy’s part. The moment his friends open up the menu, they would shower him with questions and trust his judgement without hesitation. Karla could confirm that the boring salad is not what she wants through other means. While the discussion is going, Jeremy has some way to keep track of what they are ordering so he does not mix things up or forget an order to the passing thoughts of discussion. When the waiter comes, his selections are passed on without any hassle. Everything arrives together to maximize the dining experience and prove that Jeremy’s suggestion was right on.</p>
-<h3>Young Lovers Club</h3>
+<h4>Young Lovers Club</h4>
 <p>
-These fine ladies and gentlemen arrive by cab to a dimly lit Ethiopian bar and grill. As they take their seats, soft blue lights and softer electronica music populate the background. They go out a lot. Abby heard from her kite-surfing instructor that she absolutely has to try tej, a sort of honey mead, which comes in</p>
+These fine ladies and gentlemen arrive by cab to a dimly lit Ethiopian bar and grill. As they take their seats, soft blue lights and softer electronica music populate the background. Abby Cooke pipes up: “my kite-surfing instructor says we absolutely have to try the lamb tibs.” The group examines the dish on the menu: “prime cuts of lamb sauteed with butter sauce and spices”, suddenly feeling their mouths watering. According to the kite-surfing instructor, tibs are placed in the center of a group while individuals are served injera, a type of sourdough bread which is later used by the patron to wrap bits of tibs by hand. The question was, how many pots of tibs should they order? How much injera? The group was just hungry at this point, so they ordered a stack of 10 injera breads for each person, and 4 pots of tibs - one for each couple seemed well enough to suffice. The injera arrives, and Abby is disappointed. Each piece of bread is tiny! And thin! They order another stack. The tibs arrive in enormous pots of yummy goodness. Little did they know that injera is actually comprised of a spongy material that expands to soak up the sauce. At the end of the meal, the group was absolutely stuffed, only having consumed half of their bread, and the extra stack left untouched.</p>
+
+<p>This Ethiopian bar and grill realizes that their fresh customers have no idea how much food to order. They realize they need their menu to explain the behavior of the food to those without the context, and that not every group has a kite-surfing instructor to tell them how to properly eat. They also realize their menu should communicate how many portions each person should order, factoring in how much each person should be able to eat.</p>
 <h4>The Gang</h4>
 <p>
 Finals, done. Now it is time for The Gang to crash that new sushi place, White Tiger - at a budget. Maybe sushi is stretching it a bit, but this is a celebration here! Both the gluten-free Ken and the vegetarian Taylor have no problem with it. Plus, they heard the White Tiger’s selection is huge. Rumors shatter as the gang peers at the menu to find out it is true. Now they want everything. However, this is sushi they are confronted with and they have their budget. They spend almost too long for their grumbling stomachs trying to figure out what they can afford while maximizing the adventure before finally deciding just to get a double order of the sushi boat. It seems to be the most obvious and not very math weighted. At the end when presented with the bill, the question of how the bill will be split comes to question. Zac did not eat much, but Carrie wolfed down two full rolls! It takes a bit of frustrating collaboration to get a general estimate until everyone tosses in what cash they have because none want to bother with figuring out the math. Unsatisfied with their limited options, and Zac a tad bit irked he had to pay more than what his fair share would have been, what could have been a better and more adventurous dining experience had a slightly sour bend.</p>

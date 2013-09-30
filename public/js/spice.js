@@ -18,6 +18,10 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/briefalpha.html',
       controller: 'BriefAlphaController'
     })
+    .when('/lexicon', {
+      templateUrl: 'templates/lexicon.html',
+      controller: 'LexiconController'
+    })
     .otherwise({
       redirectTo: '/home'
     });
@@ -54,7 +58,7 @@ function BriefAlphaController ($scope, $routeParams) {
   }
 }
 
-function NeedsController ($scope, $routeParams) {
+function NeedsController ($scope, $routeParams, $anchorScroll) {
   $scope.model = {
     title: "Needs Analysis",
     authors: "Kai Austin, Zachary Homans, James Wu",
@@ -64,21 +68,23 @@ function NeedsController ($scope, $routeParams) {
       experiencemap: "imgs/needs/experiencemap.jpg"
     }
   }
+
+  $scope.scrollTo = function(id) {
+    $location.hash(id);
+    $anchorScroll();
+  }
 }
 
-function NeedsController ($scope, $routeParams) {
+function LexiconController ($scope, $routeParams) {
   $scope.model = {
-    title: "Needs Analysis",
+    title: "Lexicon",
     authors: "Kai Austin, Zachary Homans, James Wu",
-    imgs: {
-      twobytwo: "imgs/needs/twobytwo.png",
-      experiencemapsmall: "imgs/needs/experiencemap.jpg",
-      experiencemap: ""
-    }
+
   }
-};
+}
 
 var ModalDemoCtrl = function ($scope, $modal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
   $scope.open = function () {
 
       var modalInstance = $modal.open({

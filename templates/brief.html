@@ -1,20 +1,115 @@
 <h1>{{ model.title }}</h1>
 <h2>{{ model.authors }}</h2>
 
-<h3>What is the problem in brief?</h3>
-	Traditional menus lack the interactive capabilities that modern software interfaces provide. No conversation exists between a restaurant patron and the menu. Combined with the lack of visual information provided, this seemingly leisurely activity is often transformed into a stressful one. Even the addition of a waiter is often unhelpful; for instance, the patron may be uncomfortable with the interaction, or the waiter may be unable to devote as much attention to the patron as is necessary to remedy the situation.
+<h3>What problem are you proposing to solve?  </h3>
+Family-style restaurants blend the traditional dining experience of tasty food and good company with an exciting and cooperative atmosphere. The result is a more dynamic and social experience intended to create an experience that can be shared with others. However, this interaction is often held back by the very thing used to create it: the traditional dining experience. Family-style restaurants assume that because traditional menus work in traditional dining, they can be seamlessly transferred to family-style dining with no consequences.
+This is not true. Deciding an order is an order of magnitude more complicated when done in a group. Many problems often arise when people are forced to consider the constraints others face. As such, the current system of determining the order at family-style restaurants is clumsy, obtuse, and mostly done in the minds of the customers. It does not need to be this way.
+However, we concede to the fact that people enjoy the current state of family-style dining. They enjoy the social benefits of the system and the exciting stories it allows them to tell. Therefore, we aim to solve the following problem: How can we transform the tools of the family-style dining experience so that they create more cohesive group interactions without losing the current social atmosphere?
 
-<h3>How will your project change the status quo?  For whom? </h3>
-We aim to design a software-based interface that provides an alternative, more accessible restaurant interaction that can exist alongside the traditional one. This will create a more comfortable experience for patrons who wish have more control over how and what they order, as well as those restricted by the current interaction, such as non-native speakers and children. 
+<h3>Who matters?</h3>
+<p>
+In this project, our goal is to create a product that satisfies the needs, values, and constraints of the standard groups of people you’d expect to find at a family-styled restaurant. But who are these “standard groups”? In order to find out, we conducted contextual inquiry on a large number of participants, each having significant experience in this space.</p>
+<p>
+From our findings, we were able to determine two key insights. First, there are two main axes along which groups of patrons lie: Knowledge of the Restaurant, and Knowledge of One Another. Some people have been to a restaurant dozens of times, while others are experiencing it for their first. Some groups are close families, while others are large groups of friends from school. This insight fits with the idea that the family-style dining experience combines the traditional dining experience (Knowledge of the Restaurant) with the socialization of a group (Knowledge of One Another).</p>
+<p>
+Second, there appears to be five easily definable groups of people that attend family-style restaurants. We have synthesized our information on these groups into persona (link the word persona to the persona page). Unlike standard persona, these persona are groups of people, rather than an individual. This is because, at a family-style restaurant, people’s goals are defined almost exclusively by what type of group they are in. As such, our five persona groups, The Yangs, The Blakes, Jeremy and his Guests, Young Lovers Club, and The Gang, are clearly defined by their values and their goals.</p>
 
-<h3>What is (at least) one naïve design idea (rough sketch)?   How does this idea address what you see as the core problem?</h3>
-	We picture an experience where the patron can specify needs such as allergies or a budget they wish to adhere to. The menu automatically displays the available options. By limiting the selection of food that the patron can choose from, the menu becomes less intimidating and more tailored to the patron, creating a more comfortable interaction. 
-
-<h3>What information do you need to collect?  How will you collect it?  How will you meet your target users, or who can serve as effective proxies for them?</h3>
-Before moving forward, we need to properly identify pain points associated with the traditional restaurant interaction, as well as the different user groups that would most benefit from our alternative one. As restaurant patrons form a large user base, we intend to use a combination of personal interviews and electronic surveys to gather this information.
-Once we know what specific problems we wish to solve, we will focus on specific details and individual interactions. We plan to conduct longer, more personal interviews with specific key users, implementing design strategies such as co-design.
-Additionally, we know several companies in Boston, such as E La Carte, are focused on creating electronic menus of their own. We plan to research their systems and contact them in order to approach the problem from different perspectives.
+<p>
+By combining these two insights, we can produce the graph below:</p><br />
+<img src="{{ 'public/' }}{{ model.imgs.twobytwo }}" width="400" height="400" />
 
 
-<h3>How will your team work together to accomplish these goals (as well as your individual learning goals)? </h3>
-	Our goal as a team is to equally spread experience between us, as well as to transfer existing knowledge among us. As our team is made up of three very different skill sets, we are perfectly equipped to tackling most problems. However, this requires us to act as a team. As such, all team members must be present for every meeting and interview, unless circumstances require otherwise. Additionally, all decisions will be made as a team.
+
+
+</p>
+
+<p>
+Notice how these groups are spread along the axes. Not only is there at least of group in each quadrant, but the final group lies almost directly in the center. This is a very strong result, as it allows us to be confident in our persona construction. Such a spread in personas provides us a way to acknowledge and understand the various needs and values of many different types of people and groups.
+</p>
+
+<h3>How do your prospective users think about this problem/activity?</h3>
+
+<p>
+In our contextual inquiry, we came across numerous different perspectives of the family-style dining experience. As stated in the previous section, we synthesized much of the personal information to construct five unique persona groups. The remainder of this information was synthesized in an experience map. To understand many of the terms used in this map, please use our lexicon provided <a href="./#/lexicon">here</a></p>
+
+<div ng-controller="ModalDemoCtrl">
+
+<p><img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="650" height="500" /></p>
+
+
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3> modal</h3>
+        </div>
+        <div class="modal-body">
+        
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button class="btn" ng-click="open()">Open me!</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>
+
+
+<p>The experience map allows us to make connections between key guiding principles, important phases of the experience, and the perception of these phases by our users. These connections reveal important areas of opportunity where we can create a positive change.</p>
+<p>First, please take a look at the guiding principles. These principles are the foundation of the family-style dining experience. When our users embark on this experience, they expect it to be as such. Thus, these principles are the base requirements that our solution must satisfy.</p>
+<p>Let’s move on. A critical insight our synthesis brought forth was that many users perceive the experience in a number of phases, each with their own set of goals. There are seven distinct phases (in truth, there are eight, but only seven were relevant to our inquiry). Not only can these phases be described by goals, they can be described by tasks, thoughts, and feelings.</p>
+<p>Each phase has a distinct set of tasks involved. Some of these tasks are linear, some are non-linear, and some are cyclical. The orientation of these tasks play a large part in how users perceive them. For example, as a cycle, the determination phase is difficult, as it must be done until a final order is constructed.</p>
+<p>By passing our personas through the tasks above, we were able to construct a set of thoughts and feelings that various users have throughout each phase. The results of this process can be seen in the experience map. While many of these feelings and thoughts are positive, a number of them are negative. By pinpointing these negative aspects of each phase, we can easily determine areas of opportunity.</p>
+
+
+<h3 id="requirements">What requirements must your solution satisfy?</h3>
+<p>
+As stated in the previous section, the guiding principles of the family-style dining experience form the most basic requirements that our solution must satisfy. That is, our solution must:
+</p>
+<ul>
+<li>be convenient, easy, social, and fun.</li>
+<li>only be one part of the dining experience. It cannot overtake the other parts of the experience.</li>
+<li>allow people to coordinate their meals.</li>
+<li>provide service that is respectful, effective, and personable.</li>
+<li>not impede on the positive aspects of traditional family-style dining.</li>
+</ul>
+
+<div id="narratives">
+<h3 id="impact">What will the impact of a successful solution be?</h3>
+<p>
+In order to demonstrate the impact of a successful solution, it is best to look at specific scenarios that groups currently undergo and how the solution could enhance those experiences. Because each group is so different, each has a distinct set of problems they undergo. Thus, each persona group has its own scenario to better demonstrate the potential effects of our solution.
+</p>
+
+
+
+<h4>The Yang Family</h4>
+<p>
+Like every weekend, the Yangs go to their favorite restaurant, the White Lotus. However due to some crazy American holiday, the restaurant is closed and they are forced to find another place for their weekly family time. Going in, they have high hopes of the food - but are not familiar with the menu. The Grandparents have the hardest time as they still do not speak English very well, and they are the most picky because they are forever homesick for the true taste of China. It takes a while of frustration and translation, but they manage to somehow figure out what they will get and call the waiter over. When they begin to order, they are asked how spicy they want their food. They order what they would have at their regular restaurant. However, because the scale differs across restaurants - when the food is finally delivered, they discover it is not as spicy as they really wanted it to be. In the end, what should have been a night everyone looked forward to became one of frustration over ordering and disappointment with the meal.</p>
+<p>Ideally, the Yangs would have sat down at this new restaurant and be greeted by a menu where they could easily identify what food is what. They did not need to be familiar with the restaurant to trust that it had their favorite old foods, and that it really could offer a taste of their old China. Language barriers would hold little relevance. The scale of spiciness of their food would be clear so they would have had a better way of gauging it. In the end, the family would have had just an enjoyable evening, perhaps even better, as they would have at their regular restaurant. And the family tradition lives on.</p>
+<h4>The Blake Family</h4>
+<p>
+The Blake family is out trying Carnita Wok, a new restaurant suggested to them by Michelle’s co-worker. It’s their first time here. The food is a newfangled Asian-Mexican fusion style. The whole family is seated, staring intently at the metallic menus, thinking about which family combination to order. Michelle scans the page: “Chow Fun Burrito sampler with steak, pork, egg, fish, and oyster varieties”, “Spring roll tamales dipped in hoisin sauce”, “Garlic lobster chopped and served with rice-wheat tortilla”. She ponders: “Rice-wheat? So am I going to be allergic to this or not?” After twenty minutes of back-and-forth with the waiters, they decide to go with the Chow Fun Burrito sampler. Another twenty minutes, and an entire platter of Chow Fun Burritos arrives at the table. Unfortunately, although Michelle can have the rice-wheat, it turns out that Philicia cannot, so the family waits another ten minutes as a specially made rice burrito is served to Philicia. Philicia pouts because it does not look as delicious as the rice-wheat burritos. Michelle feels guilty for having ordered this combo platter for everyone. The mood at the table is spoiled, as the two most fun members of the family are unhappy.</p>
+<p>
+Carnita Wok hires a hit-team of world class designers to create an interactive electronic menu. The result? After two minutes of telling the waiters about their allergies, the menu changes to only show the combination platters which can make everyone happy, so the family can get it right the first time. The family members as individuals can pick and choose which plates interest them, and the platter choices are further filtered. The decision is made in minutes, and the Blakes enjoy Philicia’s new round of knock-knock jokes she learned at school the previous day.</p>
+<h4>Jeremy and his Guests</h4>
+<p>
+Jeremy overhears his friends talking about where they should have lunch, and he jumps at the chance to suggest the most recent restaurant he went to. Since Jeremy is considered the asian food expert, his friends immediately trust his judgement that the food served is nothing short of the best. But now that everyone is at the restaurant, it is up to Jeremy to ensure they are not disappointed. Jeremy has his own idea of what the stables are that they should definitely get, but it is his first time working with a group this large. Questions are tossed back and forth as to what is good. Corey and Jessica start a slight bicker over whether or not to have their rice with shrimp or chicken. When asked, Jeremy says they are both equally delicious. Karla seems far too insistent on having just a giant salad - which is not even Asian. She does not trust Jeremy as much as her other friends when it comes to food. In the end, Jeremy must make the executive decision, somehow ensure everyone gets what they want, while balancing it with enough of the best the restaurant has to offer for everyone to share. It does not help that portion size split between the group would vary between not enough and too much. As soon as he begins to order, he gets one of the dishes wrong, causing a shoutout from Mark. The food comes, but Jeremy suddenly remembers something else everyone should try and calls the waiter back to order one more dish. After the meal and slightly delayed edition, no one is disappointed, though Jeremy still has his host skills to polish for next time.</p>
+<p>
+Ideally, the collaboration and discussion phase would go more smoothly with less stress on Jeremy’s part. The moment his friends open up the menu, they would shower him with questions and trust his judgement without hesitation. Karla could confirm that the boring salad is not what she wants through other means. While the discussion is going, Jeremy has some way to keep track of what they are ordering so he does not mix things up or forget an order to the passing thoughts of discussion. When the waiter comes, his selections are passed on without any hassle. Everything arrives together to maximize the dining experience and prove that Jeremy’s suggestion was right on.</p>
+<h3>Young Lovers Club</h3>
+<p>
+These fine ladies and gentlemen arrive by cab to a dimly lit Ethiopian bar and grill. As they take their seats, soft blue lights and softer electronica music populate the background. They go out a lot. Abby heard from her kite-surfing instructor that she absolutely has to try tej, a sort of honey mead, which comes in</p>
+<h4>The Gang</h4>
+<p>
+Finals, done. Now it is time for The Gang to crash that new sushi place, White Tiger - at a budget. Maybe sushi is stretching it a bit, but this is a celebration here! Both the gluten-free Ken and the vegetarian Taylor have no problem with it. Plus, they heard the White Tiger’s selection is huge. Rumors shatter as the gang peers at the menu to find out it is true. Now they want everything. However, this is sushi they are confronted with and they have their budget. They spend almost too long for their grumbling stomachs trying to figure out what they can afford while maximizing the adventure before finally deciding just to get a double order of the sushi boat. It seems to be the most obvious and not very math weighted. At the end when presented with the bill, the question of how the bill will be split comes to question. Zac did not eat much, but Carrie wolfed down two full rolls! It takes a bit of frustrating collaboration to get a general estimate until everyone tosses in what cash they have because none want to bother with figuring out the math. Unsatisfied with their limited options, and Zac a tad bit irked he had to pay more than what his fair share would have been, what could have been a better and more adventurous dining experience had a slightly sour bend.</p>
+<p>
+Ideally when The Gang arrived at the White Tiger, bam! They would have known right away what they could fit into their budget, how much they could get, and the maximum diversity of sushi that would include. No math or thinking included. After that already brutal multivariable calculus test, definitely no math or thinking included. Their focus could just be on talking with one another and eating things they never had before. Not thinking or stressing about it. That doubles for payment at the end. Everyone is already on a tight budget, and while they are splurging a little, it is unfair for people to pay more or less than their fair share. Paying bills is painful as it is. Therefore, it is only natural that there is ease in the payment process where people their weight.</p>
+
+</div>

@@ -4,90 +4,85 @@
 <ul>
 	<li><h3>Table of Contents</h3></li>
 	<li>
-		<a ng-click="scrollTo('narratives')">Narratives</a>
+		<a ng-click="scrollTo('problem')">The Problem</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('people')">The People</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('experience')">The Experience</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('impact')">The Impact</a>
 	</li>
 </ul>
 
-<h3>What problem are you proposing to solve?  </h3>
-Family-style restaurants blend the traditional dining experience of tasty food and good company with an exciting and cooperative atmosphere. The result is a more dynamic and social experience intended to create an experience that can be shared with others. However, this interaction is often held back by the very thing used to create it: the traditional dining experience. Family-style restaurants assume that because traditional menus work in traditional dining, they can be seamlessly transferred to family-style dining with no consequences.
-This is not true. Deciding an order is an order of magnitude more complicated when done in a group. Many problems often arise when people are forced to consider the constraints others face. As such, the current system of determining the order at family-style restaurants is clumsy, obtuse, and mostly done in the minds of the customers. It does not need to be this way.
-However, we concede to the fact that people enjoy the current state of family-style dining. They enjoy the social benefits of the system and the exciting stories it allows them to tell. Therefore, we aim to solve the following problem: How can we transform the tools of the family-style dining experience so that they create more cohesive group interactions without losing the current social atmosphere?
+<div id="problem" class="section">
 
-<h3>Who matters?</h3>
+<h3>The Problem</h3>
 <p>
-In this project, our goal is to create a product that satisfies the needs, values, and constraints of the standard groups of people you’d expect to find at a family-styled restaurant. But who are these “standard groups”? In order to find out, we conducted contextual inquiry on a large number of participants, each having significant experience in this space.</p>
+Family-style restaurants blend the traditional dining experience of tasty food and good company with the exciting and cooperative atmosphere of group. The result is a more dynamic and social experience that can be shared with others. However, this interaction is often held back by the very thing used to create it: the traditional dining experience. Family-style restaurants assume that because traditional menus work in traditional dining, they can be seamlessly transferred to family-style dining with no consequences.
+</p>
 <p>
-From our findings, we were able to determine two key insights. First, there are two main axes along which groups of patrons lie: Knowledge of the Restaurant, and Knowledge of One Another. Some people have been to a restaurant dozens of times, while others are experiencing it for their first. Some groups are close families, while others are large groups of friends from school. This insight fits with the idea that the family-style dining experience combines the traditional dining experience (Knowledge of the Restaurant) with the socialization of a group (Knowledge of One Another).</p>
+This is not true. Deciding an order is an order of magnitude more complicated when done in a group. Many problems often arise when people are forced to consider the constraints of others. As such, the current system of determining an order at family-style restaurants is clumsy, obtuse, and mostly done in the minds of the customers. It does not need to be this way.
+</p>
 <p>
-Second, there appears to be five easily definable groups of people that attend family-style restaurants. We have synthesized our information on these groups into persona (link the word persona to the persona page). Unlike standard persona, these persona are groups of people, rather than an individual. This is because, at a family-style restaurant, people’s goals are defined almost exclusively by what type of group they are in. As such, our five persona groups, The Yangs, The Blakes, Jeremy and his Guests, Young Lovers Club, and The Gang, are clearly defined by their values and their goals.</p>
+However, we concede that people enjoy the current state of family-style dining. They enjoy the social benefits of the system and the exciting stories it allows them to tell. Therefore, we aim to solve the following problem: How can we transform the tools of the family-style dining experience so that they create more cohesive group interactions without losing the current social atmosphere?
+</p>
+</div>
+
+<div id="people" class="section">
+<h3>The People</h3>
+<p>
+In order to understand just who it is we need to design for, we conducted contextual inquiry on a large number of family-style restaurant patrons. From our findings, we were able to determine two key insights.</p>
+<p>
+First, there are two main axes along which groups of patrons lie: Knowledge of the Restaurant, and Knowledge of One Another. Some people have been to a restaurant dozens of times, while others are experiencing it for their first. Some groups are close families, while others are large groups of friends from school. This insight fits with the idea that the family-style dining experience combines the traditional dining experience (Knowledge of the Restaurant) with the socialization of a group (Knowledge of One Another).</p>
+<p>
+Second, there appears to be five easily definable groups of people that attend family-style restaurants. We have synthesized our information on these groups into personas. Unlike standard persona, these personas are groups of people, rather than an individual. This is because, at a family-style restaurant, people’s goals are defined almost exclusively by what type of group they are in. As such, our five persona groups, The Yangs, The Blakes, Jeremy and his Guests, Young Lovers Club, and The Gang, are clearly defined by their values and their goals.</p>
 
 <p>
 By combining these two insights, we can produce the graph below:</p><br />
 <img src="{{ 'public/' }}{{ model.imgs.twobytwo }}" width="400" height="400" />
-
-
-
-
 </p>
 
 <p>
-Notice how these groups are spread along the axes. Not only is there at least of group in each quadrant, but the final group lies almost directly in the center. This is a very strong result, as it allows us to be confident in our persona construction. Such a spread in personas provides us a way to acknowledge and understand the various needs and values of many different types of people and groups.
+Notice how these groups are spread along the axes. Not only is there at least of group in each quadrant, but the final group lies almost directly in the center. This result is representative of the strength these personas will have in further design; such a spread in personas provides us a way to acknowledge and understand the various needs and values of many different types of people and groups.
 </p>
-
-<h3>How do your prospective users think about this problem/activity?</h3>
-
-<p>
-In our contextual inquiry, we came across numerous different perspectives of the family-style dining experience. As stated in the previous section, we synthesized much of the personal information to construct five unique persona groups. The remainder of this information was synthesized in an experience map. To understand many of the terms used in this map, please use our lexicon provided <a href="./#/lexicon">here</a></p>
-
-
-<p>
-	<img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="650" height="500" /></p>
-<div ng-controller="ModalDemoCtrl">
-
-    <script type="text/ng-template" id="myModalContent.html">
-    	
-        <div class="modal-header">
-            <h3>Experience Map</h3>
-        </div>
-        <div class="modal-body">
-		<img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="1350" height="900" /></p>
-        </div>
-        <div class="modal-footer">
-            
-        </div>
-    </script>
-    <div ng-include="myModalContent.html"></div>
-    <button class="btn" ng-click="open()">Open me!</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
 </div>
 
+<div id="experience" class="section">
+<h3>The Experience</h3>
 
-<p>The experience map allows us to make connections between key guiding principles, important phases of the experience, and the perception of these phases by our users. These connections reveal important areas of opportunity where we can create a positive change.</p>
-<p>First, please take a look at the guiding principles. These principles are the foundation of the family-style dining experience. When our users embark on this experience, they expect it to be as such. Thus, these principles are the base requirements that our solution must satisfy.</p>
-<p>Let’s move on. A critical insight our synthesis brought forth was that many users perceive the experience in a number of phases, each with their own set of goals. There are seven distinct phases (in truth, there are eight, but only seven were relevant to our inquiry). Not only can these phases be described by goals, they can be described by tasks, thoughts, and feelings.</p>
-<p>Each phase has a distinct set of tasks involved. Some of these tasks are linear, some are non-linear, and some are cyclical. The orientation of these tasks play a large part in how users perceive them. For example, as a cycle, the determination phase is difficult, as it must be done until a final order is constructed.</p>
-<p>By passing our personas through the tasks above, we were able to construct a set of thoughts and feelings that various users have throughout each phase. The results of this process can be seen in the experience map. While many of these feelings and thoughts are positive, a number of them are negative. By pinpointing these negative aspects of each phase, we can easily determine areas of opportunity.</p>
-
-
-<h3 id="requirements">What requirements must your solution satisfy?</h3>
 <p>
-As stated in the previous section, the guiding principles of the family-style dining experience form the most basic requirements that our solution must satisfy. That is, our solution must:
+	In our contextual inquiry, we came across numerous different perspectives of the family-style dining experience. As stated in the previous section, we synthesized much of the personal information to construct five unique persona groups. The remainder of this information was synthesized in an experience map. To understand many of the terms used in this map, please use our lexicon provided <a href="./#/lexicon">here.</a>
+</p>
+<p>
+	The experience map allows us to visualize the connections between key guiding principles, important phases of the experience, and the perception of these phases by our users. These connections reveal important areas of opportunity where we can create a positive change.
+</p>
+
+<p><img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="1170" height="900" /></p>
+
+</div>
+
+<div id="requirements" class="section">
+<h3>The Requirements</h3>
+<p>
+The guiding principles as presented in the experience map provide the foundation for the basic requirements that our solution must satisfy. Therefore, our solution must:
 </p>
 <ul>
 <li>be convenient, easy, social, and fun.</li>
 <li>only be one part of the dining experience. It cannot overtake the other parts of the experience.</li>
 <li>allow people to coordinate their meals.</li>
 <li>provide service that is respectful, effective, and personable.</li>
-<li>not impede on the positive aspects of traditional family-style dining.</li>
+<li>complement, not impede, the positive aspects of traditional family-style dining.</li>
 </ul>
+</div>
 
-<div id="narratives">
-<h3 id="impact">What will the impact of a successful solution be?</h3>
+<div id="impact" class="section">
+<h3>The Impact</h3>
 <p>
-In order to demonstrate the impact of a successful solution, it is best to look at specific scenarios that groups currently undergo and how the solution could enhance those experiences. Because each group is so different, each has a distinct set of problems they undergo. Thus, each persona group has its own scenario to better demonstrate the potential effects of our solution.
+In order to demonstrate the impact of a successful solution, it is best to look at specific scenarios that groups currently undergo and how the solution could enhance those experiences. Because each group is so different, each has a distinct set of problems. Thus, each persona group has its own scenario to better demonstrate the potential effects of our solution. You can view the narratives here.
 </p>
-
-
 
 <h4>The Yang Family</h4>
 <p>

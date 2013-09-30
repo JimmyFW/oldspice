@@ -30,3 +30,9 @@
 .toplevel dd {
 	margin-left: 50px;
 }
+
+.section {
+	border: 1px dotted #CCC;
+	margin: 5px;
+	padding: 20px;
+}

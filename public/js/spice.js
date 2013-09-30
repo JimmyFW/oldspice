@@ -1,5 +1,14 @@
 var Site = angular.module('Site', ['ui.bootstrap']);
 
+Site = angular.extend(Site, angular.module("Site", [])
+            .run(function ($rootScope, $location, $anchorScroll, $routeParams) {
+              $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+                $location.hash($routeParams.scrollTo);
+                $anchorScroll();
+              })
+                
+            }));
+
 Site.config(function ($routeProvider) {
   $routeProvider
     .when('/home', {
@@ -58,7 +67,7 @@ function BriefAlphaController ($scope, $routeParams) {
   }
 }
 
-function NeedsController ($scope, $routeParams, $anchorScroll) {
+function NeedsController ($scope, $routeParams, $anchorScroll, $location) {
   $scope.model = {
     title: "Needs Analysis",
     authors: "Kai Austin, Zachary Homans, James Wu",

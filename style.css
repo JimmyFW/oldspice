@@ -18,4 +18,10 @@
 .navi li {
 	list-style-type: none;
 	display: inline;
+	padding: 10px;
+	margin: 10px;
+}
+
+.navi {
+	margin-top: 10px;
 }

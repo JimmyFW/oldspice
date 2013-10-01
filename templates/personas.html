@@ -10,10 +10,12 @@
 <h3 class="centered">{{ model.authors }}</h3>
 
 <div ng-repeat="persona in personas">
-	<h2>{{ persona.title }}</h2>
-	<ul class="familyList">
-		<li ng-repeat="member in persona.members">{{ member }}</li>
-	</ul>
-	<img ng-src="{{ persona.img }}" />
-	<p>{{ persona.description }}</p>
+	<div id="{{ persona.img.substring(21,persona.img.length-4) }}">
+		<h2>{{ persona.title }}</h2>
+		<ul class="familyList">
+			<li ng-repeat="member in persona.members">{{ member }}</li>
+		</ul>
+		<img ng-src="{{ persona.img }}" />
+		<p>{{ persona.description }}</p>
+	</div>
 </div>

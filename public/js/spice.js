@@ -23,9 +23,17 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/lexicon.html',
       controller: 'LexiconController'
     })
+    .when('/lexicon/:termid', {
+      templateUrl: 'templates/lexicon.html',
+      controller: 'LexiconDetailController'
+    })
     .when('/personas', {
       templateUrl: 'templates/personas.html',
       controller: 'PersonaController'
+    })
+    .when('/personas/:termid', {
+      templateUrl: 'templates/personas.html',
+      controller: 'PersonaDetailController'
     })
     .when('/narratives', {
       templateUrl: 'templates/narratives.html',
@@ -103,6 +111,38 @@ function PersonaController ($scope, $routeParams, $http, $location) {
   }
 }
 
+function PersonaDetailController ($scope, $routeParams, $http, $anchorScroll, $location) {
+  $http.get('public/data/personas.json').success(function (data) {
+    $scope.personas = data;
+  });
+
+  $scope.model = {
+    title: "Personas",
+    authors: "Kai Austin, Zachary Homans, James Wu",
+    imgs: {
+      blake: "public/imgs/personas/blake.png",
+      chang: "public/imgs/personas/chang.jpg",
+      oberlin: "public/imgs/personas/oberlin.jpg",
+      yang: "public/imgs/personas/yang.jpg",
+      ylc: "public/imgs/personas/ylc.jpg"
+    }
+  }
+
+  $scope.term = $routeParams.termid;
+
+  $scope.jumpTo = function (id) {
+    $location.hash(id);
+    $anchorScroll();
+  }
+
+  $scope.$on('$viewContentLoaded', function() {
+    $location.hash($scope.term);
+    $anchorScroll();
+    //window.scrollTo(0,90);
+  });
+
+}
+
 function LexiconController ($scope, $routeParams, $http) {
   $http.get('public/data/lexicon.json').success(function (data) {
     console.log(data['Stakeholders']);
@@ -113,6 +153,26 @@ function LexiconController ($scope, $routeParams, $http) {
     title: "Lexicon",
     authors: "Kai Austin, Zachary Homans, James Wu"
   }
+}
+
+
+function LexiconDetailController ($scope, $routeParams, $http, $anchorScroll, $location) {
+  $http.get('public/data/lexicon.json').success(function (data) {
+    console.log(data['Stakeholders']);
+    $scope.dictionary = data;
+  });
+
+  $scope.model = {
+    title: "Lexicon",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+
+  $scope.jumpTo = function (id) {
+    $location.hash(id);
+    $anchorScroll();    
+  }
+
+  jumpTo($routeParams.termid);
 }
 
 function NarrativesController ($scope, $routeParams) {

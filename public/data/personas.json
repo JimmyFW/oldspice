@@ -18,13 +18,13 @@
 	"img": "public/imgs/personas/ylc.jpg"
 },
 {
-	"title": "Oberlin College Students",
+	"title": "Oberlin College Students (The Gang)",
 	"members": ["Brad", "Tim", "Ken", "Trace", "Dolly", "Taylor", "Zac", "Carrie"],
 	"description": "Test just finished? You can bet that The Gang is out celebrating at a local Sushi place. An adventurous bunch, they love trying new restaurants often. However, with Taylor being a vegetarian and Ken being gluten-free, figuring out what to get at an unfamiliar restaurant can be difficult. This is exacerbated by the overwhelming amount of enticing options most restaurants have to offer. Their goal is to diversify the meal while ensuring everyone is satisfied, all for a low price that fits measly college budgets.",
 	"img": "public/imgs/personas/oberlin.jpg"
 },
 {
-	"title": "Chang & Friends",
+	"title": "Jeremy Chang & Friends",
 	"members": ["Mark Rukes", "Corey Garcia", "Jon Levine", "Jessica Liu", "Karla Marks", "Will Craigs"],
 	"description": "Jeremy Chang is the son of the chef at the Yellow Monkey Cafe. As such, he’s been immersed in Asian cuisine since he was young. He loves bringing his friends Mark, Corey, Jon, Jessica, Karla, and Will to the Cafe to experience the best Asian food in town. Using his knowledge as a stepping stone, the group wishes to have the best and most authentic meal possible at the lowest price possible. The group puts their trust in Jeremy’s experience to lead them to this goal.",
 	"img": "public/imgs/personas/chang.jpg"

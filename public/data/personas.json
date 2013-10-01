@@ -2,22 +2,31 @@
 {
 	"title": "The Yang Family",
 	"members": ["Cheung (Grandfather)", "Huan (Grandmother)", "Lisa", "Chris", "Helen", "Jenny", "John", "Michael"],
-	"description": "The Yang family immigrated from China 20 years ago. Every weekend, they go to their favorite Chinese restaurant, The White Lotus, with the entire family. To them, going out to eat is like being home in China for a few hours. Having been to The White Lotus so many times, the staff there already knows what they are going to order when they arrive. This allows the family to enjoy their time together experiencing a piece of home with the family."
+	"description": "The Yang family immigrated from China 20 years ago. Every weekend, they go to their favorite Chinese restaurant, The White Lotus, with the entire family. To them, going out to eat is like being home in China for a few hours. Having been to The White Lotus so many times, the staff there already knows what they are going to order when they arrive. This allows the family to enjoy their time together experiencing a piece of home with the family.",
+	"img": "public/imgs/personas/yang.jpg"
 },
 {
 	"title": "The Blake Family",
 	"members": ["Miriam (Grandmother)", "Bob (Grandfather)", "Michelle (Mother)", "Richard (Father)", "Xavier (Uncle)", "Bailey (Daughter, 15)", "Philicia (Daughter, 10)", "Brandon (Son, 8)"],
-	"description": "List every allergy you can think of. Then randomly assign them to each member of the Blake family. As you might imagine, eating out with the Blakes is sufficiently difficult. Indeed, finding food that the Blakes can eat together isn’t easy. However, as a tight-knit family, they love spending time together when Miriam, Bob, and Xavier are in town. Each time they go to their favorite Chinese restaurant, The Blue Pheasant, they never know what’s in store for them. Ordering food so that no one feels left out takes a long time, but it’s worth it to share a joyful meal together."
-
+	"description": "List every allergy you can think of. Then randomly assign them to each member of the Blake family. As you might imagine, eating out with the Blakes is sufficiently difficult. Indeed, finding food that the Blakes can eat together isn’t easy. However, as a tight-knit family, they love spending time together when Miriam, Bob, and Xavier are in town. Each time they go to their favorite Chinese restaurant, The Blue Pheasant, they never know what’s in store for them. Ordering food so that no one feels left out takes a long time, but it’s worth it to share a joyful meal together.",
+	"img": "public/imgs/personas/blake.jpg"
 },
 {
 	"title": "The Young Lovers Club",
 	"members": ["The Mastens Couple", "The Cooke Couple", "The Garcia Couple", "The Cohen Couple"],
-	"description": "Collectively known as the Young Lovers Club, these four couples have come together to relive their wild college days. Now well into their early thirties, these newly married couples love discovering what the restaurants of New York City have to offer. Experimenting with new dishes, new drinks, and new styles are all in a night’s adventure for the YLC. Tapas are a group favorite. Because the Cookes love spicy foods and the Cohens keep kosher, it’s sometimes difficult to order just the right amount of food for everyone to share, but the YLC manages to continue having new adventures even a year after their founding."
+	"description": "Collectively known as the Young Lovers Club, these four couples have come together to relive their wild college days. Now well into their early thirties, these newly married couples love discovering what the restaurants of New York City have to offer. Experimenting with new dishes, new drinks, and new styles are all in a night’s adventure for the YLC. Tapas are a group favorite. Because the Cookes love spicy foods and the Cohens keep kosher, it’s sometimes difficult to order just the right amount of food for everyone to share, but the YLC manages to continue having new adventures even a year after their founding.",
+	"img": "public/imgs/personas/ylc.jpg"
 },
 {
 	"title": "Oberlin College Students",
 	"members": ["Brad", "Tim", "Ken", "Trace", "Dolly", "Taylor", "Zac", "Carrie"],
-	"description": "Test just finished? You can bet that The Gang is out celebrating at a local Sushi place. An adventurous bunch, they love trying new restaurants often. However, with Taylor being a vegetarian and Ken being gluten-free, figuring out what to get at an unfamiliar restaurant can be difficult. This is exacerbated by the overwhelming amount of enticing options most restaurants have to offer. Their goal is to diversify the meal while ensuring everyone is satisfied, all for a low price that fits measly college budgets."
+	"description": "Test just finished? You can bet that The Gang is out celebrating at a local Sushi place. An adventurous bunch, they love trying new restaurants often. However, with Taylor being a vegetarian and Ken being gluten-free, figuring out what to get at an unfamiliar restaurant can be difficult. This is exacerbated by the overwhelming amount of enticing options most restaurants have to offer. Their goal is to diversify the meal while ensuring everyone is satisfied, all for a low price that fits measly college budgets.",
+	"img": "public/imgs/personas/oberlin.jpg"
+},
+{
+	"title": "Chang & Friends",
+	"members": ["Mark Rukes", "Corey Garcia", "Jon Levine", "Jessica Liu", "Karla Marks", "Will Craigs"],
+	"description": "Jeremy Chang is the son of the chef at the Yellow Monkey Cafe. As such, he’s been immersed in Asian cuisine since he was young. He loves bringing his friends Mark, Corey, Jon, Jessica, Karla, and Will to the Cafe to experience the best Asian food in town. Using his knowledge as a stepping stone, the group wishes to have the best and most authentic meal possible at the lowest price possible. The group puts their trust in Jeremy’s experience to lead them to this goal.",
+	"img": "public/imgs/personas/chang.jpg"
 }
 ]

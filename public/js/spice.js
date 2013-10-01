@@ -23,6 +23,14 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/lexicon.html',
       controller: 'LexiconController'
     })
+    .when('/personas', {
+      templateUrl: 'templates/personas.html',
+      controller: 'PersonaController'
+    })
+    .when('/narratives', {
+      templateUrl: 'templates/narratives.html',
+      controller: 'NarrativesController'
+    })
     .when('/scroll', {
       templateUrl: 'templates/scroll.html'
     })
@@ -35,6 +43,11 @@ function InspirationController ($scope, $http) {
   $http.get('public/data/inspirations.json').success(function (data) {
     $scope.inspirations = data;
   });
+
+  $http.get('public/data/personas.json').success(function (data) {
+    $scope.personas = data;
+  });
+
   $scope.model = {
     title: "Design Inspirations",
     authors: "Kai Austin, Zachary Homans, James Wu"
@@ -65,16 +78,36 @@ function NeedsController ($scope, $routeParams, $anchorScroll, $location) {
       experiencemap: "public/imgs/needs/experiencemap.jpg"
     }
   }
-
   $scope.scrollTo = function(id) {
     $location.hash(id);
     $anchorScroll();
   }
 }
 
+function PersonaController ($scope, $routeParams, $anchorScroll, $location) {
+  $scope.model = {
+    title: "Personas",
+    authors: "Kai Austin, Zachary Homans, James Wu",
+    imgs: {
+      blake: "public/imgs/personas/blake.png",
+      chang: "public/imgs/personas/chang.jpg",
+      oberlin: "public/imgs/personas/oberlin.jpg",
+      yang: "public/imgs/personas/yang.jpg",
+      ylc: "public/imgs/personas/ylc.jpg"
+    }
+  }
+}
+
 function LexiconController ($scope, $routeParams) {
   $scope.model = {
     title: "Lexicon",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+}
+
+function NarrativesController ($scope, $routeParams) {
+  $scope.model = {
+    title: "Narratives",
     authors: "Kai Austin, Zachary Homans, James Wu"
   }
 }

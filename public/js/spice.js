@@ -103,7 +103,12 @@ function PersonaController ($scope, $routeParams, $http, $location) {
   }
 }
 
-function LexiconController ($scope, $routeParams) {
+function LexiconController ($scope, $routeParams, $http) {
+  $http.get('public/data/lexicon.json').success(function (data) {
+    console.log(data['Stakeholders']);
+    $scope.dictionary = data;
+  });
+
   $scope.model = {
     title: "Lexicon",
     authors: "Kai Austin, Zachary Homans, James Wu"

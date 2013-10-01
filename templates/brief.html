@@ -1,7 +1,31 @@
-<h1>{{ model.title }}</h1>
-<h2>{{ model.authors }}</h2>
+<script type="text/javascript">
+  var coords = $('#header').offset();
+  var coordY = 145; //coords.top;
+$(window).scroll(function () {
+  var scrollPos = $(document).scrollTop();
+  console.log(scrollPos + ' ' + coordY);
+  if(scrollPos > coordY) {
+  	var newPos = scrollPos;
+  	$('#header').css('top', 0 + 'px');
+  	/*
+  	$('#header').animate({
+  		top: newPos + 'px'
+  	}, 10);
+	*/
+  }
+  else {
+  	$('#header').css('top', coordY - scrollPos + 'px');
+  }
+});
+</script>
 
-<ul>
+<h1>{{ model.title }}</h1>
+<h3>{{ model.authors }}</h3>
+
+
+
+<div id="header" class="uiScrollfix">
+<ul class="needsToc">
 	<li><h3>Table of Contents</h3></li>
 	<li>
 		<a ng-click="scrollTo('problem')">The Problem</a>
@@ -15,7 +39,12 @@
 	<li>
 		<a ng-click="scrollTo('impact')">The Impact</a>
 	</li>
+	<li>
+		<a ng-click="scrollTo('limitations')">The Limitations</a>
+	</li>
 </ul>
+</div>
+
 
 <div id="problem" class="section">
 
@@ -42,7 +71,8 @@ Second, there appears to be five easily definable groups of people that attend f
 
 <p>
 By combining these two insights, we can produce the graph below:</p><br />
-<img src="{{ 'public/' }}{{ model.imgs.twobytwo }}" width="400" height="400" />
+<img ng-src="{{ model.imgs.twobytwo }}" width="400" height="400" />
+
 </p>
 
 <p>
@@ -60,7 +90,7 @@ Notice how these groups are spread along the axes. Not only is there at least of
 	The experience map allows us to visualize the connections between key guiding principles, important phases of the experience, and the perception of these phases by our users. These connections reveal important areas of opportunity where we can create a positive change.
 </p>
 
-<p><img src="{{ 'public/' }}{{ model.imgs.experiencemapsmall }}" width="1170" height="900" /></p>
+<p><img ng-src="{{ model.imgs.experiencemapsmall }}" width="1170" height="900" /></p>
 
 </div>
 
@@ -109,4 +139,12 @@ Finals, done. Now it is time for The Gang to crash that new sushi place, White T
 <p>
 Ideally when The Gang arrived at the White Tiger, bam! They would have known right away what they could fit into their budget, how much they could get, and the maximum diversity of sushi that would include. No math or thinking included. After that already brutal multivariable calculus test, definitely no math or thinking included. Their focus could just be on talking with one another and eating things they never had before. Not thinking or stressing about it. That doubles for payment at the end. Everyone is already on a tight budget, and while they are splurging a little, it is unfair for people to pay more or less than their fair share. Paying bills is painful as it is. Therefore, it is only natural that there is ease in the payment process where people their weight.</p>
 
+</div>
+
+
+<div id="limitations" class="section">
+<h3>The Limitations</h3>
+<p>Our approach is limited in two ways. First, we are only addressing restaurant patrons in our design. In truth, there are other stakeholders - namely waiters and the restaurant owner. However, because it is mainly the group’s interactions that are substantially different between traditional and family-style dining, we felt it was more important to focus on that experience rather than the waiter’s, which does not change substantially. However, we still greatly consider how the patrons interact with waiters, so we haven’t completely left them out of the picture.</p>
+
+<p>Second, we are intentionally looking away from transforming many non-order aspects of the meal. This is embodied by the lack of the Intermediate Phase in between the Order Phase and the Meal Phase in the experience map, where much of the socialization occurs. Our purpose is not to fundamentally change how people interact socially in restaurants as a whole. People like it the way it is now. Thus, our main focus will be on the other parts of the experience and how to transform them to be more social.</p>
 </div>

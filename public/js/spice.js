@@ -1,13 +1,5 @@
-var Site = angular.module('Site', ['ui.bootstrap']);
-
-Site = angular.extend(Site, angular.module("Site", [])
-            .run(function ($rootScope, $location, $anchorScroll, $routeParams) {
-              $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-                $location.hash($routeParams.scrollTo);
-                $anchorScroll();
-              })
-                
-            }));
+var Site = angular.module('Site', ['ui.scrollfix']);
+//var Site = angular.module('Site', ['ui.bootstrap']);
 
 Site.config(function ($routeProvider) {
   $routeProvider
@@ -31,6 +23,9 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/lexicon.html',
       controller: 'LexiconController'
     })
+    .when('/scroll', {
+      templateUrl: 'templates/scroll.html'
+    })
     .otherwise({
       redirectTo: '/home'
     });
@@ -53,16 +48,9 @@ function HomeController ($scope, $routeParams) {
   }
 }
 
-function BriefController ($scope, $routeParams) {
-  $scope.model = {
-    title: "Project Brief (current version)",
-    authors: "Kai Austin, Zachary Homans, James Wu"
-  }
-}
-
 function BriefAlphaController ($scope, $routeParams) {
   $scope.model = {
-    title: "Project Brief (version 1)",
+    title: "Original Project Brief",
     authors: "Kai Austin, Zachary Homans, James Wu"
   }
 }
@@ -72,9 +60,9 @@ function NeedsController ($scope, $routeParams, $anchorScroll, $location) {
     title: "Needs Analysis",
     authors: "Kai Austin, Zachary Homans, James Wu",
     imgs: {
-      twobytwo: "imgs/needs/twobytwo.png",
-      experiencemapsmall: "imgs/needs/experiencemapsmall.jpg",
-      experiencemap: "imgs/needs/experiencemap.jpg"
+      twobytwo: "public/imgs/needs/twobytwo.png",
+      experiencemapsmall: "public/imgs/needs/experiencemapsmall.jpg",
+      experiencemap: "public/imgs/needs/experiencemap.jpg"
     }
   }
 
@@ -87,46 +75,6 @@ function NeedsController ($scope, $routeParams, $anchorScroll, $location) {
 function LexiconController ($scope, $routeParams) {
   $scope.model = {
     title: "Lexicon",
-    authors: "Kai Austin, Zachary Homans, James Wu",
-
+    authors: "Kai Austin, Zachary Homans, James Wu"
   }
 }
-
-var ModalDemoCtrl = function ($scope, $modal, $log) {
-  $scope.items = ['item1', 'item2', 'item3'];
-  $scope.open = function () {
-
-      var modalInstance = $modal.open({
-        templateUrl: 'myModalContent.html',
-        controller: ModalInstanceCtrl,
-        resolve: {
-          items: function () {
-            return $scope.items;
-          }
-        }
-      });
-
-      modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
-    };
-}
-
-
-var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
-
-    $scope.items = items;
-    $scope.selected = {
-      item: $scope.items[0]
-    };
-
-    $scope.ok = function () {
-      $modalInstance.close($scope.selected.item);
-    };
-
-    $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
-    };
-};

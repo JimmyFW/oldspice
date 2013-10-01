@@ -35,4 +35,19 @@
 	border: 1px dotted #CCC;
 	margin: 5px;
 	padding: 20px;
+	margin-left: 250px;
+}
+
+.needsToc li {
+	list-style-type: none;
+}
+
+#header {
+	position: fixed;
+	background: #FFF;
+	z-index: 10;
+	float: left;
+}
+
+#problem {
 }

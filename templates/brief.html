@@ -1,3 +1,12 @@
+<style>
+.container {
+	margin-left: 25px;
+}
+.heading {
+	margin-left: 300px;
+}
+</style>
+
 <script type="text/javascript">
   var coords = $('#header').offset();
   var coordY = 145; //coords.top;
@@ -7,11 +16,6 @@ $(window).scroll(function () {
   if(scrollPos > coordY) {
   	var newPos = scrollPos;
   	$('#header').css('top', 0 + 'px');
-  	/*
-  	$('#header').animate({
-  		top: newPos + 'px'
-  	}, 10);
-	*/
   }
   else {
   	$('#header').css('top', coordY - scrollPos + 'px');
@@ -19,9 +23,10 @@ $(window).scroll(function () {
 });
 </script>
 
+<div class="heading">
 <h1>{{ model.title }}</h1>
-<h3>{{ model.authors }}</h3>
-
+<h3 class="centered">{{ model.authors }}</h3>
+</div>
 
 
 <div id="header" class="uiScrollfix">

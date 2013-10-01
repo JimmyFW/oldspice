@@ -1,11 +1,19 @@
+<style>
+.familyList li {
+	list-style-type: none;
+	display: inline;
+	padding: 5px;
+}
+</style>
+
 <h1>{{ model.title }}</h1>
 <h3 class="centered">{{ model.authors }}</h3>
 
-<div ng-repeat="persona in personas">"
+<div ng-repeat="persona in personas">
 	<h2>{{ persona.title }}</h2>
-	<ul>
+	<ul class="familyList">
 		<li ng-repeat="member in persona.members">{{ member }}</li>
 	</ul>
-	<img src="{{ 'public/' }}{{ value.img }}" />
-	<p>{{ value.description }}</p>
+	<img ng-src="{{ persona.img }}" />
+	<p>{{ persona.description }}</p>
 </div>

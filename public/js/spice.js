@@ -1,5 +1,5 @@
-var Site = angular.module('Site', ['ui.scrollfix']);
-//var Site = angular.module('Site', ['ui.bootstrap']);
+//var Site = angular.module('Site', ['ui.scrollfix']);
+var Site = angular.module('Site', []);
 
 Site.config(function ($routeProvider) {
   $routeProvider
@@ -39,18 +39,19 @@ Site.config(function ($routeProvider) {
     });
 });
 
-function InspirationController ($scope, $http) {
+function InspirationController ($scope, $http, $anchorScroll, $location) {
   $http.get('public/data/inspirations.json').success(function (data) {
     $scope.inspirations = data;
-  });
-
-  $http.get('public/data/personas.json').success(function (data) {
-    $scope.personas = data;
   });
 
   $scope.model = {
     title: "Design Inspirations",
     authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+
+  $scope.scrollTo = function(id) {
+    $location.hash(id);
+    $anchorScroll();
   }
 }
 
@@ -84,7 +85,11 @@ function NeedsController ($scope, $routeParams, $anchorScroll, $location) {
   }
 }
 
-function PersonaController ($scope, $routeParams, $anchorScroll, $location) {
+function PersonaController ($scope, $routeParams, $http, $location) {
+  $http.get('public/data/personas.json').success(function (data) {
+    $scope.personas = data;
+  });
+
   $scope.model = {
     title: "Personas",
     authors: "Kai Austin, Zachary Homans, James Wu",

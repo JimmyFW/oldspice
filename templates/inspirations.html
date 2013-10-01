@@ -34,7 +34,7 @@ $(window).scroll(function () {
 <ul class="needsToc">
 	<li><h3>Table of Contents</h3></li>
 	<li ng-repeat="value in inspirations">
-		<a ng-click="scrollTo('problem')">{{ value.title }}</a>
+		<a ng-click="scrollTo('{{ value.img.substring(5,value.img.length-4) }}')">{{ value.title }}</a>
 	</li>
 </ul>
 </div>
@@ -45,9 +45,9 @@ $(window).scroll(function () {
 </div>
 
 <div ng-repeat="value in inspirations">
-	<div class="inspirationSource section">
+	<div id="{{ value.img.substring(5,value.img.length-4) }}" class="inspirationSource section">
 	<h2>{{ value.title }}</h2>
-	<img src="{{ 'public/' }}{{ value.img }}" />
+	<img ng-src="{{ 'public/' }}{{ value.img }}" />
 	<p>{{ value.text }}</p>
 	</div>
 </div>

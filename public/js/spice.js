@@ -1,6 +1,15 @@
 //var Site = angular.module('Site', ['ui.scrollfix']);
 var Site = angular.module('Site', []);
 
+/*
+Site.run(function($rootScope, $location, $anchorScroll, $routeParams) {
+  $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+    $location.hash($routeParams.scrollTo);
+    $anchorScroll();  
+  });
+});
+*/
+
 Site.config(function ($routeProvider) {
   $routeProvider
     .when('/home', {
@@ -58,8 +67,10 @@ function InspirationController ($scope, $http, $anchorScroll, $location) {
   }
 
   $scope.scrollTo = function(id) {
-    $location.hash(id);
-    $anchorScroll();
+    var location = '#' + id;
+    $.scrollTo($(location), 500);
+    //$location.hash(id);
+    //$anchorScroll();
   }
 }
 
@@ -88,8 +99,10 @@ function NeedsController ($scope, $routeParams, $anchorScroll, $location) {
     }
   }
   $scope.scrollTo = function(id) {
-    $location.hash(id);
-    $anchorScroll();
+    var location = '#' + id;
+    $.scrollTo($(location), 500);
+    //$location.hash(id);
+    //$anchorScroll();
   }
 }
 

@@ -1,14 +1,71 @@
 //var Site = angular.module('Site', ['ui.scrollfix']);
 var Site = angular.module('Site', []);
 
-/*
-Site.run(function($rootScope, $location, $anchorScroll, $routeParams) {
-  $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-    $location.hash($routeParams.scrollTo);
-    $anchorScroll();  
-  });
+Site
+.factory('deck', function () {
+    var slides = [],
+        p = pointer(slides);
+
+    var ensureId = function (e, nextIndex) {
+        if (!e.attr('id')) {
+            e.attr('id', 'slide' + nextIndex);
+        }
+    };
+
+    var toggleVisibility = function (slide) {
+        if (slide) {
+            var e = $('#' + slide.id),
+                display = e.css('display') === 'block' ? 'none' : 'block';
+            e.css({display: display});
+        }
+    };
+
+    var move = function (action) {
+        toggleVisibility(p.getCurrent());
+        action();
+        toggleVisibility(p.getCurrent());
+    };
+
+    return {
+        add: function (element) {
+            ensureId(element, slides.length);
+            slides.push({
+                id: element.attr('id')
+            });
+        },
+        next: function () {
+            move(p.moveNext);
+        },
+        previous: function () {
+            move(p.movePrevious);
+        },
+        count: function() {
+            return slides.length;
+        }
+    };
+})
+.directive('slide', function (deck) {
+    return {
+        restrict: 'E',
+        link: function ($scope, $element) {
+            $element.hide();
+            deck.add($element);
+            if (deck.count() === 1) {
+                deck.next();
+            }
+        }
+    };
+})
+.run(function ($document, deck) {
+    $document.keydown(function (e) {
+        var key = e.keyCode;
+        if (key === 32 || key === 39) {
+            deck.next();
+        } else if (key === 37) {
+            deck.previous();
+        }
+    });
 });
-*/
 
 Site.config(function ($routeProvider) {
   $routeProvider
@@ -48,8 +105,9 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/narratives.html',
       controller: 'NarrativesController'
     })
-    .when('/scroll', {
-      templateUrl: 'templates/scroll.html'
+    .when('/storyboards', {
+      templateUrl: 'templates/storyboards.html',
+      controller: 'StoryboardsController'
     })
     .otherwise({
       redirectTo: '/home'
@@ -193,4 +251,13 @@ function NarrativesController ($scope, $routeParams) {
     title: "Narratives",
     authors: "Kai Austin, Zachary Homans, James Wu"
   }
+}
+
+function StoryboardsController ($scope, $routeParams) {
+  $scope.model = {
+    title: "Storyboards",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+
+
 }

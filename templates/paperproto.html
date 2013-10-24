@@ -1,0 +1,248 @@
+<style>
+.container {
+	margin-left: 25px;
+}
+.heading {
+	margin-left: 300px;
+}
+
+.needsToc li a:hover {
+	cursor:pointer;
+}
+</style>
+
+<script type="text/javascript">
+  var coords = $('#header').offset();
+  var coordY = 145; //coords.top;
+$(window).scroll(function () {
+  var scrollPos = $(document).scrollTop();
+  //console.log(scrollPos + ' ' + coordY);
+  if(scrollPos > coordY) {
+  	var newPos = scrollPos;
+  	$('#header').css('top', 0 + 'px');
+  }
+  else {
+  	$('#header').css('top', coordY - scrollPos + 'px');
+  }
+});
+</script>
+
+<div class="heading">
+<h1>{{ model.title }}</h1>
+<h3 class="centered">{{ model.authors }}</h3>
+</div>
+
+
+<div id="header">
+<ul class="needsToc">
+	<li><h3>Table of Contents</h3></li>
+	<li>
+		<a ng-click="scrollTo('design')">The Design</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('needs')">The Needs</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('alternatives')">The Alternatives</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('insights')">The Insights</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('future')">The Future</a>
+	</li>
+	<li>
+		<a ng-click="scrollTo('limitations')">The Limitations</a>
+	</li>
+</ul>
+</div>
+
+
+<div id="design" class="section">
+
+<h3>The Design</h3>
+<p>
+Together We Feast is an interactive meal selection system designed to encourage groups dining at family style restaurants to construct their meal together, thus infusing the experience of ordering with a more collaborative atmosphere. This collaborative atmosphere is intended to complement and enhance the existing social atmosphere that group dining already facilitates.
+</p>
+
+<p>
+Together We Feast is intended to run on a set of screens embedded on a table. In the center of the table, there is a larger, communal screen, known as Shared Space. At each of the seats, there is a small, individual screen, known as a Menu. All of these screens are touch-screens. 
+</p>
+
+<p>
+For our paper prototype testing, we used a rectangular table which seats roughly 4-6 people. However, the system is intended to be usable for both rectangular and circular tables of all sizes. 
+</p>
+
+<img ng-src="public/imgs/paperproto/tabletop.jpg" width="400" height="400" /><br />
+
+<p>
+Each patron has a personal Menu. The Menu is used to explore the available dishes, as with a normal menu. The Menu also contains details and information about each dish which is overlaid on the menu upon touch. This detail view contains a description of the dish, an accompanying image, contained ingredients, spiciness level, and portion size. In particular, the spiciness level is constructed in such a way to indicate how other patrons felt about the dishes’ spiciness, instead of the restaurants.
+</p>
+
+<img ng-src="public/imgs/paperproto/menup1.jpg" width="400" height="400" /><br />
+
+<p>
+By dragging the image of the dish from the detail view upwards towards the Shared Space, the image appears in the Shared Space for the remainder of the group to view. 
+</p>
+
+<p>
+Each Menu is personal because although the group is ordering together, each person has their own preferences and information they wish to view at any given time. This is also similar to traditional menus allowing patrons to already come in with some familiarity of how food selection works.
+</p>
+
+<img ng-src="public/imgs/paperproto/chorizo.jpg" width="400" height="400" /><br />
+
+<p>
+With a set of possible dishes in the Shared Space, patrons then discuss their choices and preferences with one another. Any dish in Shared Space is highlighted with a unique color that corresponds to the highlighted dish on the Menu. By using this, patrons can easily identify the dishes others have placed in Shared Space, enabling them to easily locate information on their own. 
+</p>
+
+
+<p>
+Through the easy transmission of information and documentation of intention, the system allows for group decisions to be made in a much more collaborative and thoughtful manner. Overall, Shared Space’s purpose is to emphasize the group nature of the meal and to provide a workspace for the meal to be constructed for the group, by the group.
+</p>
+
+<p>
+A bell-shaped button on each Menu informs waiters that the table needs attention. 
+<!--IMG oF BELL-->
+	
+The goal of this button is to increase the strength of the link between patrons and waiters. By providing an indirect and less disruptive means of communication with the waiter, we hope the patrons will be more likely to ask waiters for assistance or information. Additionally, by providing a button, patrons no longer need to interrupt their conversations with others in order to lookout and try to signal a waiter, thus creating a more fluid social atmosphere.
+</p>
+
+<p>
+When the group comes to a consensus and the order is complete, a waiter needs only look at the dishes on the table to determine what the order is. He can then confirm the order with the group. This enables the group to skip the often difficult task of flipping through the menu and remembering exactly what the order is without mistakes. This cutdown on time encourages patrons and waiters to ask for more clarification regarding each dish and the order as a whole.
+</p>
+
+<p>
+A possible extension to the waiter’s experience that we have not explored is a tablet that automatically displays what is in Shared Space. This would extremely decrease the time required for the waiter to take the order, further enabling clarifying questions to be asked, leading to a more positive overall group experience.
+</p>
+
+<p>
+After ordering, the menus automatically turn off, as they are no longer needed and only provide an unnecessary distraction to the social experience.
+<!--IMG DIAGRAM FLOW OVER-VIEW-->
+</p>	
+	
+</div>
+
+<div id="needs" class="section">
+	<h3>The Needs</h3>
+
+<p>
+From our primary exploration (see our Needs Analysis), we determined that there are five key requirements to meet our users’ needs. Our system must:
+<ul>
+	<li>be convenient, easy, social, and fun.</li>
+	<li>only be one part of the dining experience. It cannot overtake the other parts of the experience.
+allow people to coordinate their meals.</li>
+	<li>provide service that is respectful, effective, and personable.</li>
+	<li>complement, not impede, the positive aspects of traditional family-style dining.</li>
+
+Let’s tackle each of these individually.
+</p>
+
+<em>Our system must be convenient, easy, social, and fun.</em>
+
+<p>
+Plain and simple, the system in its current form is not easy to use. Neither the less nor the more technology-experienced users really got a good grasp as to how the interface worked. Even after some manual explanation, users failed to use the system to its fullest potential. In particular, users were confused on how to navigate and how to drag objects into Shared Space. Additionally, our current spiciness indicators failed to achieve the effect we desired. Either the system should be more intuitive so that less explanation is required or the explanations should be more powerful, yet subtle.
+</p>
+
+<p>
+However, after receiving an explanation on how to use the system, most of our users were satisfied with how to use it. Many saw the potential for a fun and enjoyable experience using it. This confirmed our belief that we needed to expedite our users through the learning phase so that they could reach this enjoyable potential.
+</p>
+
+
+<em>Our system only be one part of the dining experience. It cannot overtake the other parts of the experience.</em>
+<p>
+
+As stated in the section above, the system automatically shuts down after the meal is ordered. This prevents the system from interfering with the social atmosphere of the group dining experience.
+</p>
+
+<em>Our system allows people to coordinate their meals.</em>
+<p>
+
+By creating Shared Space, patrons can more easily visualize what other patrons’ intentions are. This creates a collaborative environment that encourages people to coordinate their meal together. 
+</p>
+
+<p>
+However, during testing, we ran into large dilemma. Although our system does allow for coordination, it doesn’t make it clear to the patron that coordination is an option. Instead of placing all of the possible dishes in Shared Space and then determining which to order, our testers were discussing whether or not they should put a dish in Shared Space before doing so, failing to use the system to its fullest potential as a workspace. Shared Space was thus seen as a “final decision area”. Although social, this interaction is stiff and strict and doesn’t allow for experimentation. We believe users want to think individually and then as a group, not parse the menu in unison. 
+</p>
+
+<p>
+Thus, while our system does meet this requirement, it falls short on informing the users on this capability.
+</p>
+
+<em>Our system provides service that is respectful, effective, and personable.</em>
+<p>
+
+Traditional menus often fail to provide important information regarding allergies, ingredients, and spiciness levels, among others. By providing this information is a streamlined manner, we believe our system is more respectful to the users’ restrictions than a traditional one.
+</p>
+<p>
+By providing an enhanced link with waiters, our system also enables more personable service that is often difficult to achieve in busy restaurants.
+</p>
+
+<em>Our system complements, not impedes, the positive aspects of traditional family-style dining.</em>
+<p>
+
+Traditional family dining is all about being social. At the bare minimum (without the Shared Space), our system retains this critical feature. With the addition of Shared Space, the social experience is further enhanced by streamlining coordination and communication.
+</p>
+
+</div>
+
+<div id="alternatives" class="section">
+	<h3>The Alternatives</h3>
+<p>Our ideation around our Needs Analysis resulted in four distinct designs for our system.</p>
+
+<p>
+Our first design was a fully digital table. The entire table’s surface would act as a means of interaction between patrons. Digital menus would be scattered across the screen and digital food would be freely moveable across the entire table. This design felt too ambitious. On the user side, such a system would feel very foreign. Such a large departure from the traditional experience would cause both confusion and distraction. However, from this idea spawned the concept of Shared Space where the group could formulate the meal together. On the technical side, emulating an entire table using multiple screens would be incredibly difficult, especially when considering navigation between them. The amount of effort required to create such a system was so enormously high that we decided that the design wasn’t worth our time in such a form.</p>
+
+<p>The second design was far more conservative, yet attempted to capture the feeling that the first design provided. As in our final design, this design had an individual menu and Shared Space. However, this Shared Space was completely virtual, in that it was visible through the same screen as the menu, instead of in the center of the table. However, this had the potential of going against one of our requirements in that it had the potential of inhibiting social interaction. Through this design, we were able to formulate a key principle we felt encapsulated this philosophy: If we can separate our users into individual rooms and they can still use the system to its fullest potential, then we have failed. Our system must encourage social activity, not discourage it.</p>
+
+<p>Our third design was a different take on the actual menu itself. Instead of the traditional row-style menu, we experimented with a Prezi-esque tree format, where the users could continuously expand the tree to see more specific information about sections, items, and ingredients. As with our first design, we felt that this design was too large a departure from the traditional menu. Although it might be more convenient, its unfamiliarity would instantly cause confusion, discomfort, and distraction. It also required much more interaction with the system, which had the potential to limit social behavior instead of encouraging it.</p>
+
+<p>The final design (e.g. the one presented above) was a synthesis of what we had learned from our other designs. Having the Shared Space was critical to encouraging social behavior, but this space must actually be shared to do that. By sharing a space, we force our users to work together. Yet, by giving them an individual Menu, they can still bring their individual ideas, preferences, and thoughts to the table.</p>
+
+</div>
+
+<div id="insights" class="section">
+	<h3>The Insights</h3>
+
+<p>Through both persona analysis and user testing, we determined that there were two styles of ordering using our system. Either users discussed dishes before pushing them into Shared Space, or users discussed dishes after. We named these scenarios Forethought and Afterthought, respectively. As discussed in the last section, we believe Forethought, while sometimes necessary, is less social and leads to less individual involvement and collaboration in the ordering process. Afterthought enables users to act as individuals first, and then as a group. During testing, we saw that users are very much in a Forethought space as they are not yet comfortable thinking in the Afterthought space.</p>
+
+<p>Reiterating an insight from our second design, we’ve developed a design principle that’s helped guide our decisions. If we can separate our users into individual rooms and they can still use the system to its fullest potential, then we have failed. We need to ensure our system heavily encourages social behavior. Following this principle forces us to ensure that socializing is a key component.</p>
+
+<p>Testers were afraid to use Shared Space. Although it’s meant to be a communal space, it feels very final. This is related to the lack of clarity of the space’s purpose. It’s not clear when the order has been placed or whether a waiter is required. Clearly marking a space’s purpose, whether through text or natural mapping, is critical in ensuring users use the system as intended.</p>
+
+<p>Details are interesting and often useful, but they shouldn’t be the main priority of our system. Testers focused mostly on the detailed views instead of on Shared Space, although this is likely our fault, as most of the testing content was in the detailed views. Our system should focus more on the experience as a whole, rather than the details.</p>
+
+<p>Highlighting is not a natural mapping for some. Most testers didn’t pick up on the relation between the highlight color of the dish and the highlight color on the menu. One tester thought it was a mapping between user and which dishes she placed in Shared Space. Color is a powerful tool, but it must be used in a way that’s natural and logical to the users.</p>
+
+</div>
+
+<div id="future" class="section">
+	<h3>The Future</h3>
+	<p>Our next step is to make improvements on our design with our key insights in hand. Using these insights, we have begun to formulate designs we believe may more accurate meet our users’ needs and goals. </p>
+
+<h4>Inventory</h4>
+The addition of a personal inventory, a place that stored which dishes the user was interested in, on the Shared Space screen, might make users more comfortable with using Shared Space. Dishes could then be easily moved into the main Shared Space. This would enable others to view which dishes a user is interested in and vice versa, enabling enhanced communication. However, it would not fully implement the workspace idea that we envision.
+
+<h4>Sharing Hockey</h4>
+In the current system, it is difficult to share specific Menu information with others without straight up telling them to go to that place in the menu. This is especially true with the inventory system, especially if the user wants to share an inventory item. Being able to flick an inventory item to another’s inventory in Shared Space might be a way to share information between users in an easy and fun way. 
+
+<h4>Appearing Dishes</h4>
+In order to make it clearer that Shared Space is a workspace, any dish viewed in detail on the Menu appears in Shared Space temporarily. This demonstrates that the Shared Space is only temporary, and thus is as place of experimentation rather than decision, encouraging users to use it as such.
+
+<h4>Silver Plates</h4>
+Shared Space also displays a set of silver plates. Dishes placed on these plates are considered “final dishes” that will be ordered. By clearly marking which dishes are final and which aren’t, this design attempts enable Shared Space to serve two functions at once. This demarcation encourages users to use Shared Space as both a workspace and an order space.
+
+<h4>Changing detailed view</h4>
+The detail view of a menu item can be accessed when clicked on in the inventory instead of directly on the menu. Since the menu already has briefly explanations, emphasizing the detailed view is not always a priority and is only important in special cases (e.g. on dishes that the user is already interested in). 
+
+<h4>Colors Map to People</h4>
+When a user drags an dish into the Shared Space, it and the menu are highlighted with a user-specific color. This lets others know who is considering what dishes. This color mapping could possibly be more natural than our current implementation.
+</div>
+
+<div id="limitations" class="section">
+	<h3>The Limitations</h3>
+<p>
+As in the Needs Analysis, we’ve chosen to limit the amount we design for waiters. Although we feel waiters are an important stakeholder, it is most important to make the direct users satisfied first. That is not say we’ve abandoned waiters. As seen above, an entire subsystem is dedicated to enhancing the link between patrons and waiters. However, we’ve chosen to limit our scope to how this link benefits patrons, rather than waiters.</p>
+
+<p>Paper prototyping an entire menu is difficult, which forced us to limit the scope of our prototype to eight dishes. Although we believe our testing was both valid and valuable, we must concede that this small size inhibited the amount of exploration our users could do with the system during testing. Because there were so few items, testers could quickly browse over everything and then immediately discuss their options without using Shared Space. In a scenario where the menu is much larger, more time must be put into browsing. Thus, our testing was more biased towards promoting Forethought rather than Afterthought. Regardless, this bias helped underline how important it is to push the users into a more collaborative space.</p>
+
+</div>

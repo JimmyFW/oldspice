@@ -108,6 +108,10 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/storyboards.html',
       controller: 'StoryboardsController'
     })
+    .when('/paperproto', {
+      templateUrl: 'templates/paperproto.html',
+      controller: 'PaperProtoController'
+    })
     .otherwise({
       redirectTo: '/home'
     });

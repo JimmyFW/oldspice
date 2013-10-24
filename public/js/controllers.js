@@ -43,8 +43,6 @@ controllers.controller('NeedsController', ['$scope', '$routeParams', function ($
   $scope.scrollTo = function(id) {
     var location = '#' + id;
     $.scrollTo($(location), 500);
-    //$location.hash(id);
-    //$anchorScroll();
   }
 }]);
 
@@ -122,5 +120,16 @@ controllers.controller('StoryboardsController', ['$scope', function ($scope) {
   $scope.model = {
     title: "Storyboards",
     authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+}]);
+
+controllers.controller('PaperProtoController', ['$scope', function ($scope) {
+  $scope.model = {
+    title: "Design Testing",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+  $scope.scrollTo = function(id) {
+    var location = '#' + id;
+    $.scrollTo($(location), 500);
   }
 }]);

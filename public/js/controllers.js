@@ -133,3 +133,10 @@ controllers.controller('PaperProtoController', ['$scope', function ($scope) {
     $.scrollTo($(location), 500);
   }
 }]);
+
+controllers.controller('WireframesController', ['$scope', function ($scope) {
+  $scope.model = {
+    title: "Wireframes",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+}]);

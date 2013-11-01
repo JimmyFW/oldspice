@@ -112,6 +112,10 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/paperproto.html',
       controller: 'PaperProtoController'
     })
+    .when('/wireframes', {
+      templateUrl: 'templates/wireframes.html',
+      controller: 'WireframesController'
+    })
     .otherwise({
       redirectTo: '/home'
     });

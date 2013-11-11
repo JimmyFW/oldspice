@@ -116,6 +116,10 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/wireframes.html',
       controller: 'WireframesController'
     })
+    .when('/freeze', {
+      templateUrl: 'templates/freeze.html',
+      controller: 'FreezeController'
+    })
     .otherwise({
       redirectTo: '/home'
     });

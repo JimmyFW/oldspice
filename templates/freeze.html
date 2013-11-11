@@ -1,0 +1,52 @@
+<h1>{{ model.title }}</h1>
+<h3 class="centered">{{ model.authors }}</h3>
+
+Instructions:
+
+<h2><a href="http://afterthink.herokuapp.com/#/home">Afterthink Engine</a></h2>
+
+Above is the link to the Afterthink Engine (Note: Currently only works in Chrome). The Afterthink Engine is an electronic system designed to enhance the family-style dining experience through the streamlined facilitation of group conversations between patrons. Our goal is for patrons to feel comfortable building a family-style meal together in inherently social way.
+
+
+
+<h2>Context</h2>
+<p>
+This implementation of the Afterthink Engine displayed here is a representation. Imagine a long rectangular table that seats six people. In the center of the table is an embedded touch screen, called Shared Space. In the remaining margins, there is a smaller, individual touch screen embedded where each patron would sit at the table, called the Individual Menu. The picture below illustrates this:</p>
+
+<p><img ng-src="public/imgs/freeze/paperproto.jpg" width="400" height="auto" /></p>
+
+<p>
+In our prototype, there are two screens. The top screen represents Shared Space, while the bottom screen represents the Individual Menu. As such, actions performed in Shared Space can be seen by all users, while actions performed in the Individual Menu cannot.</p>
+<p>
+In the actual implementation, a user’s dishes would be near and face him or her. However, in the prototype, Shared Space instead lists the dishes of each person, facing you. You may only interact with the dishes that you have proposed. We are aware of the existence of randomly-appearing superfluous scroll bars and cut-off dish names. The bell also sometimes takes several clicks to work.</p>
+<p>
+At some point, you may end up calling a waiter. This will appear as a replacement to the rest of the interface. However, please note that this is merely a representation of the waiter coming to your table used for testing, and is NOT a part of the interface.</p>
+
+<h2>Typical Tasks</h2>
+<p>
+Patrons often perform the following tasks during the family-style dining ordering process:</p>
+<ul>
+	<li>Navigating the menu.</li>
+	<li>Obtaining additional information on dishes of interest.</li>
+	<li>Proposing dishes to the group at large.</li>
+	<li>Responding to proposed dishes with either acceptance, rejection, or uncertainty.</li>
+	<li>Making decisions on which dish to order.</li>
+	<li>Ordering.</li>
+</ul>
+
+<p>
+Because this system fundamentally relies on the presence of others, we have provided buttons to add, switch, and remove patrons. We encourage you to use these buttons to simulate a group of patrons. Note these buttons are NOT part of the interface; they are simply a testing tool. To add a user, type in a user name into the box at the bottom of the page and click “Join Table”. You will then become that user. To switch users, simply click on the user’s name at the bottom of the page. To remove users, simply click on the “X” next to the user’s name. IMPORTANT: Please do NOT change anything about the user “On the House”.</p>
+
+<h2>Group Testing</h2>
+
+<p>We highly suggest that after performing an individual test of the Afterthought Engine, you perform a group test. The system currently enables multiple simultaneous users, with Shared Space updated in real time. We feel this test will enable more complete feedback on both our interface and its implementation of our design goals.</p>
+
+<h2>User Values</h2>
+<p>
+Patrons of family-style restaurants can be defined by one critical goal: being social. The purpose of eating family-style is to bond over a shared experience crafted in a collaborative manner. As a streamlined tool to facilitate this collaboration, our users expect the Afterthink Engine to conform to three key values. The Afterthink Engine must:</p>
+
+<ul>
+	<li>Complement the already-social collaboration and atmosphere of the family-style dining experience.</li>
+	<li>Not distract users from the experience at hand. All actions should be simple to the extent that no time is wasted performing functions that could be used interacting with others.</li>
+	<li>Enable easy access to valuable information, thus facilitating informed conversations between users.</li>
+</ul>

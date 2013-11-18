@@ -1,0 +1,135 @@
+<h1>{{ model.title }}</h1>
+<h3 class="centered">{{ model.authors }}</h3>
+
+<h2>The Design</h2>
+
+Our design consists of a dining table with touchscreens at each seat, with a larger touchscreen in the center, known as Shared Space. In order to emulate Shared Space, the web representation of this design, which can be found on our <a href="./#/freeze">Instructions page</a>, is made so that multiple users can visit the web page at the same time and see the actions of others in real time. All users share the Shared Space view and can view both it and their personal touchscreen menu simultaneously. The image below demonstrates an overview of how our representation models the actual design.
+
+<p><img ng-src="public/imgs/refinement/InterfaceToWeb.jpg" width="600" height="auto" /></p>
+<p>Left: Our intended design and layout; Right: How it was displayed on the website</p>
+
+<p>Our sitemap below provides a quick overview of the representation and demonstrates movement through the individual components.</p>
+<p><img ng-src="public/imgs/wireframes.jpg" width="500" height="auto" /></p>
+
+<p>
+Shared Space is represented by a large rectangle area at the top of the page. In this space, the user can see the dishes other users have selected, as well as their own. In the actual design, dishes are located near the user who proposed them, while in the representation, they are located in a box marked with the user’s name.</p>
+
+<p>
+A green-highlighted dish represents a dish in the “accepted” state, while a blue-highlighted dish represents a dish in the “maybe” state. A gray-highlighted dish represents a dish in the “proposed” state. We provide one dish “On the House” in order to wordlessly convey that dishes will appear in Shared Space and that “accepted” dishes are green.
+</p>
+
+<p><img ng-src="public/imgs/refinement/emptySharedSpace.jpg" width="600" height="auto" /></p>
+<p>Preliminary Table</p>
+
+<p><img ng-src="public/imgs/refinement/dishStates.jpg" width="600" height="auto" /></p>
+<p>Example of visible dish states</p>
+
+<p>
+Below Shared Space is the menu, which is divided into two parts. On the left a scrollable list of dishes within a section of the menu. At the bottom of this section are navigation buttons to switch sections.
+</p>
+
+<p><img ng-src="public/imgs/refinement/mainMenu.jpg" width="600" height="auto" /></p>
+
+<p>
+Each dish is comprised of a title, a description, and a price, as in a standard menu. When the  user clicks on the description, the right side of the menu displays a detailed view of the dish.  
+</p>
+
+<p><img ng-src="public/imgs/refinement/detailView.jpg" width="600" height="auto" /></p>
+
+<p>
+Each dish also has a plus button (+) next to it. Clicking the button causes the dish to appear in Shared Space near the user’s seat. In our web representation, this is represented by a box labeled with the user’s name.
+</p>
+
+<p>
+Upon entering Shared Space, a dish displays three buttons next to it. The “X” to removes the dish, the “?” shrinks the dish and places into the “maybe” state, and the checkmark places the dish into the “accepted” state.</p>
+
+<p><img ng-src="public/imgs/refinement/foodIcon.jpg" width="350" height="auto" /></p>
+
+<p>
+As the group places items in the center, users can see the actions of others, promoting discussion and debate of the final order, narrowing down the selection until the group order is finalized. The users may then press the bell button to call a waiter. In our web representation, the waiter is represented by a dialog box listing the dishes in the “accepted” state.
+</p>
+
+<p><img ng-src="public/imgs/refinement/bell.jpg" width="400" height="auto" /></p>
+
+<h2>The Changes</h2>
+<p>
+As discussed in the <a href="./#/paperproto">Design Development</a> document, the most critical shortcoming of our Paper Prototype was users spending too much time in the menu and not enough time in Shared Space actually discussing the meal. Users were afraid to use Shared Space because they were unsure of how it worked. They were also stuck in Forethought, rather than Afterthought. We soon realized that this meant we needed to turn our attention to promoting Afterthought, discussed in The Insights: Superiority of Afterthought below. We decided to focus less on the detailed views that we focused on for the paper prototype and more on designing the system to  comfortably push users to participate in Afterthought and use Shared Space effectively.
+</p>
+
+<p>In order to understand how we refined our design during this phase, it is critical to understand one of our intermediate designs: the Inventory System. Our biggest goal was to push users to use Shared Space and the Inventory System attempted to solve that problem by sectioning off a portion of the Shared Space for each individual. Users would first add a dish to their inventory, and then after discussion of the dish they would either remove the dish from the table or move it into the center of Shared Space, indicating that it was part of the final order. The picture below demonstrates this design.</p>
+
+<p><img ng-src="public/imgs/refinement/dragDropInventory.png" width="500" height="auto" /></p>
+
+<p>However, while this design was theoretically a solution, we had failed to truly identify the problem. Taking a step back, we realized that the actual problem was the need to identify the state of a dish in Shared Space. Users were anxious to use Shared Space because they were unsure of what that meant about the dishes they put on it. The Inventory System attempted to solve the problem by separating Shared Space into two locations, each with an inherent state associated with them. The Inventory represented a "proposed" dish, while the center represented an "accepted" dish. A dish that was dragged off of the screen was “rejected”.
+</p>
+
+<p>It was only upon walking through the system that we noticed a glaring flaw. Say you have a "proposed" dish. You discuss it with the other users, and when you're done, you're not sure if you want to "accept" or "reject" it. You don't want to put it back in "proposed", as it's been discussed. There's no place for it to go. Adding a third location to the Shared Space would be a far too confusing solution to this issue. Additionally, moving dishes into a "reject" state was very unclear. Conveying the usage of the dragging motion off the screen was too difficult. Again, we believed adding a third location would cause clutter and confusion.
+</p>
+
+<p>To solve this problem, we had to go back to the drawing board. We had to determine the best way to represent critical information in Shared Space. This process is discussed in The Insights: State Representation below. In the end, we determined a system with state marked with colors, the movement between states done through buttons, and contribution represented by words was the most appropriate solution. Thus, through the careful consideration of state representation, we transitioned from the Inventory System to our current design while maintaining the values obtained through the Inventory System. 
+</p>
+
+<p><img ng-src="public/imgs/refinement/currentInventory.png" width="600" height="auto" /></p>
+
+<p>However, implementing our design proved to be difficult. Key tradeoffs had to be made in order to represent our design online. First, there was no easy way to represent the Shared Space as it would actually be on a real table, with the dishes being the appropriate sizes, in the appropriate places, and facing the appropriate directions. Second, we weren't able to get live dragging working across computers. Due to these limitations, we decided to implement our design using the representation described in The Design, with sections for each user representing their section of Shared Space and the inability to move dishes around Shared Space.
+</p>
+
+<h2>The Insights</h2>
+
+<h3>Superiority of Afterthought</h3>
+<p>During the <a href="./#/paperproto">Design Development</a> phase, one of the key insights we obtained was concept of two spheres of thought in the ordering process: Forethought and Afterthought. While we had identified these spheres, we didn't act on them. In this phase, we understood the importance difference between the two and what that meant for our design.
+</p>
+
+<p>Simply put, Afterthought is far more conducive to social behavior than Forethought. This is made apparent when comparing the two under the lens of several requirements outlined in the <a href="./#/briefalpha">Project Brief</a></p>
+
+<ul>
+<li>Complement the already-social collaboration and atmosphere of the family-style dining experience.</li>
+<li>Not distract users from the experience at hand. All actions should be simple to the extent that no time is wasted performing functions that could be used interacting with others.</li>
+<li>Enable easy access to valuable information, thus facilitating informed conversations between users.</li>
+</ul>
+
+<p>Forethought, while somewhat social, is easily controllable by a select few who are more willing to speak up. Afterthought encourages everyone to share their thoughts equally, leading to a more truly collaborative meal, one that is far more thoughtful of everyone’s restrictions and desires. It allows people to be an individual first, a group second. Forethought also requires users to be disrupted every time a dish is proposed. Afterthought is more structured, but enables users to have a more fluid experience. Finally, Forethought places the burden of information heavily on the person proposing a dish. Afterthought encourages everyone to parse the entire menu before discussion, allowing them to be more informed during it.
+</p>
+<p>Although we determined that Afterthought was more suited towards our users’ goals, paper prototyping revealed to us the difficulties associated with it. Afterthought is difficult. It’s not easy for everyone to keep track of the status of each dish and who proposed what, which it requires. Some people don’t feel as comfortable voicing their opinions. And others are so used to Forethought that Afterthought is mysterious. Thus, a key insight we gained was that it was necessary to focus on not only allowing Afterthought to exist within our system, but on creating a design that encouraged Afterthought itself. We needed to design a system that caused people to think about ordering food in a different way.
+</p>
+
+<h3>State Representation</h3>
+<p>During this phase, we spend a significant amount of time determining the most appropriate method of indicating the state of each dish in Shared Space. This became incredibly important once we realized that there were more than two states, making the differentiation between them paramount.</p>
+<p>Below is a graphical representation we used to narrow the representation combinations. On one axis are the states we needed to represent, while on the other axis are a list of the possible ways to represent these states. We determine pros and cons for each pairing.</p>
+
+<p><img ng-src="public/imgs/refinement/representSpreadsheet.png" width="400" height="auto" /></p>
+
+<p></p>
+<p>From these pairings, we needed to determine a representation combination. Each combination consisted of three parts: an unambiguous representation of state, a clear method of transition between states, and representation of individual contribution. Using the table above, we constructed a new table outlining the possibilities for each piece of the combination. 
+</p>
+
+<p><img ng-src="public/imgs/refinement/representSpreadsheet2.png" width="400" height="auto" /></p>
+<p><img ng-src="public/imgs/refinement/representSpreadsheet3.png" width="400" height="auto" /></p>
+
+<p>Outlining eight of these combinations, as seen in the table above, we eventually determined that Symbols, Buttons, Words was the least ambiguous and easiest to use overall. Color is a type of symbol, so we ended up using it instead for our final combination. Overall, this combination was a critical insight in moving our design forward during this phase.</p>
+
+<h3>Representation Communication</h3>
+<p>During our heuristic evaluation, we discovered two more critical insights that we failed to account for during this phase. One, clearly representing our true design with our representation is paramount. Our intentions for our prototype were gravely misunderstood because they were not clear. For example, because the dishes of other users were displayed in blocks in Shared Space, users believed they were able to control them. However, in the actual design, these dishes would be oriented around the table, so such a belief would never occur. As it was tested individually, it was also difficult for evaluators to understand why components such as the buttons were necessary. These are just two examples of frustrations resulting from our representation. Thus, a key insight gained is the need to communicate our intentions clearly through our representation.
+</p>
+<p>Two, the button images we chose failed to communicate the actions we desired. The “?” button was meant to indicate uncertainty, but evaluators failed to understand this, opting to ignore it. The Bell button was meant to represent a bell used to call a waiter, but this too wasn’t obvious, especially to our foreign evaluator. Finally, despite the button-esque highlighting on mouseover, it wasn’t obvious that dish descriptions were clickable to open its detailed view.  From these instances, we gained the insight that the individual components of the system must also clearly communicate their function to the user.</p>
+
+
+<h2>The Limitations</h2>
+<p>
+As discussed in the previous sections, the most severe shortcoming of our prototype is its restrictions as a representation of our design. It’s intended to represent a table-sized touchscreen surrounded by several smaller screens at each seat. However, in order to bring it online, we had to alter how this was displayed, crippling the clarity of the many components of our system. 
+</p>
+
+<p>This was especially apparent in the collaborative component of our design. Heuristic evaluation demands a single evaluator at once, but our design is intended to be used by multiple users simultaneously, an obvious fact in the design but much less so in our representation. Coming to a final order is drastically different alone than in a group as well. Therefore, its use as a collaborative tool is not inherently obvious, encouraging misinterpretation of many core functionalities. One of our evaluators called it “cool visual ordering system,” when our goal was for it to be much more than that. In fact, seeing it as such can detract from the experience if users fail to understand its true purpose.
+</p>
+
+<h2>The Future</h2>
+<p>Moving forward into the next phase, we have several key questions we must investigate, as evidenced by the results of our heuristic evaluation.
+</p>
+<p>Most importantly, we must think deeply about viability of our design in accomplishing the social goals we intend for it. Our true goal, to promote Afterthought, was only fully understood starting in this phase, meaning that we merely shaped an existing idea around that goal, instead of forming the goal from it. This is dangerous, as it might be leading us down the wrong path. Our discussion with our evaluators gave us significant evidence that this might be the case. In the next phase, we must ask the question “Does our design actually achieve our goal?”
+</p>
+<p>In the same vein, we must attempt to discover the most appropriate ways of representing our design in a web interface. During our heuristic evaluation discussion, it was clear there was a detrimental disconnect with our design and our web representation. Although it’s easy to shift to blame onto others for not properly reading our instructions, we must take responsibility for this disconnect and attempt to mend it in future iterations. However, we have yet to determine the best possible way to do this with our limited skill set and tools. In the next phase, we must ask the question “How can we best bridge the disconnect between the physical design and our web representation?”
+</p>
+
+<p>
+Finally, we must carefully consider the validity of the data we have gathered thus far. During the paper prototype testing, users may have felt uncomfortable using Shared Space because the system wasn’t as responsive as a computer would be. Additionally, our tests were very limited due to the short menu, making it difficult to simulate a real dining experience. During the heuristic evaluation, there was a very obvious disconnect between our design and its web representation, causing a lot of the feedback to be fundamentally grounded in this disconnect rather than in the design itself. In this phase, we let our design be fully driven by the data from the paper prototype testing. Only now do we realize that this was incredibly dangerous, as the data was not as solid as we had believed. Luckily, we believed we went in the correct direction that time. However, we learned from our mistakes, and now must be wary about using this phase’s potentially faulty data. In the next phase, we must ask the question “To what extent should let 	our heuristic evaluation feedback determine our next steps?”
+</p>

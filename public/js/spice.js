@@ -120,6 +120,10 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/freeze.html',
       controller: 'FreezeController'
     })
+    .when('/refinement', {
+      templateUrl: 'templates/refinement.html',
+      controller: 'RefinementController'
+    })
     .otherwise({
       redirectTo: '/home'
     });

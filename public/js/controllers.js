@@ -147,3 +147,10 @@ controllers.controller('FreezeController', ['$scope', function ($scope) {
     authors: "Kai Austin, Zachary Homans, James Wu"
   }
 }]);
+
+controllers.controller('RefinementController', ['$scope', function ($scope) {
+  $scope.model = {
+    title: "Design Refinement",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+}]);

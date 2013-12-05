@@ -154,3 +154,10 @@ controllers.controller('RefinementController', ['$scope', function ($scope) {
     authors: "Kai Austin, Zachary Homans, James Wu"
   }
 }]);
+
+controllers.controller('UsabilityStudyController', ['$scope', function ($scope) {
+  $scope.model = {
+    title: "Usability Study",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+}]);

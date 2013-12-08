@@ -128,6 +128,10 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/usabilitystudy.html',
       controller: 'UsabilityStudyController'
     })
+    .when('/revision', {
+      templateUrl: 'templates/revision.html',
+      controller: 'RevisionController'
+    })
     .otherwise({
       redirectTo: '/home'
     });

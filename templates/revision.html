@@ -1,0 +1,72 @@
+<h1>{{ model.title }}</h1>
+<h3 class="centered">{{ model.authors }}</h3>
+
+<p>Note: Pictures will be added when prototype is complete</p>
+
+<h2>Hypothesis</h2>
+<p>
+In the <a href="./#/refinement">Refinement</a>, we identified several critical disconnects between the goals of our design and our users’ understanding of said goals. The most detrimental of these disconnects was the misunderstanding of Shared Space, its purpose, and its intended use. Ultimately, this flaw was our responsibility, as our representation of the design was heavily flawed. As such, in this revision, our greatest objective was to create a new representation that successfully conveyed the true intent of our design, while also making key modifications and improvements in additional critical areas.
+</p>
+
+<h2>Representation Changes</h2>
+<p>Perhaps the most crippling aspect of our previous design was our self-imposed restriction of web interface. By having multiple Shared Spaces, users misunderstood its purpose, despite the fact that each Shared Space was informationally the same. Because of the psuedo-Inventory space dedicated to each user, they believed that Shared Space was meant for individual use, rather than as a group workspace. In order to fix these problems, we needed to emphasize the existence of one, and only one, Shared Space. To do this, we decided to take a new approach. By separating the Shared Space and Menu into two sites and using a tablet to represent Shared Space and other computers to represent the individual menus, as seen below, we could create a system in which there was only one Shared Space for all users. This representation is far more accurate to our true design, granting us much more ability to test it.
+
+</p>
+
+<img src="" width="600px" height="600px" alt="Picture of Tablet surrounded by computers" />
+
+<p>
+Transforming Shared Space into its own application enables far more freedom for us as designers to create our desired experience. Previously, we shied away from live-dragging dishes because we weren’t able to get state to instantly change across screens, even though its a far more intuitive interaction splitting up dishes into personal sections and restricting movement. But with one screen for Shared Space, we can implement dragging easily.
+</p>
+
+<p>
+Additionally, our previous representation created space for each user representing their actual space at the table. By having one Shared Space, this is no longer needed. Shared Space now becomes what it was intended to be: a workspace for groups to design their meal together. The entire screen is dedicated to displaying the dishes users have proposed, with little extraneous and personal information, leading to a far more collaborative experience. This change also has the unintended side-effect of enabling unlimited users; as many people can use the Shared Space at once without adding personal information to Shared Space for each one. This enables the system to be used by a group of any size, increasing its versatility.
+</p>
+
+<p>
+Overall, this representation effectively eliminates the gap between the mental model of the system and the actual design itself. By move closer to the true design, this representation should solve many of the issues stemming from this misunderstanding, while also making it easier to test and easier to user.
+</p>
+
+<h2>States to Likes</h2>
+<p>
+Another critical miscommunication in our previous design was the use of states: proposed, accepted, maybe, and rejected. Specifically, it was very unclear what the “maybe” state meant, mostly due to the blue coloring of its button and the ambiguity of its “?” icon. Similarly, it was unclear as to how multiples of the same dish were ordered. Having the equivalent dishes separated from one another was confusing, clunky, and extremely space-consuming. In an attempt to solve both problems at once, we decided to replace the explicit states and their buttons and replace them with a “Count and Like” system. 
+</p>
+
+<p>
+When first parsing the menu, dishes have a “+” button next to them. Pressing this button represents adding the dish into Shared Space, effectively placing the dish into the “proposed” state. Once in the Shared Space, dishes have a counter, representing the number of times the dish will be ordered. Located below the counter are an “+” button and a “-” button, enabling users to increment or decrement this counter. Once the counter is at “1” or higher, the dish turns green, effectively placing it into the “accepted” state. There is no implementation of the “maybe” state, as it was deemed too confusing. Without the “maybe” state, the coloring of states is now far easier to understand. Numbers are also now used to represent different states of the order beyond just acceptance, a new feature.
+</p>
+
+<img src="" width="600px" height="600px" alt="Pictures of Menu, Dish, and Dish with One or More Orders" />
+
+<p>
+With the removal of the individual inventory, we immediately realized we were removing the users’ ability to track what dishes he or she was interested in. This feature is vital for ensuring constructive conversations between users. To retain this valuable feature, we implemented the “Like” system. Once the dish is in Shared Space, its corresponding “+” button transforms into a “Like” button. Users can then “Like” the dish. These dishes then appear at the bottom of the menu in the users’ Like Space. This enables the users to keep track of which dishes he or she is interested without cluttering up Shared Space.
+</p>
+
+<img src="" width="600px" height="600px" alt="Pictures of Menu and Like Space" />
+
+<p>One of the biggest issues we tackled during the creation of this design was whether to display the amount of “Likes” each dish has in Shared Space. Our fear is that it would essentially devolve into a voting system, discouraging discussion rather than promoting it. In order to test this hypothesis, we created a <a href="./#/usabilitystudy">usability experiment</a>.</p>
+
+<img src="" width="600px" height="600px" alt="Pictures of Dish with and Without Likes" />
+
+<h2>Other</h2>
+
+<p>
+Aside from critical changes, we also made a number of smaller changes reflecting the some of feedback we received in the Heuristic Evaluation.
+</p>
+
+<p>
+As discussed in the Design Refinement, several users were very confused as to what the Bell icon meant. In order to make it clearer, we moved the Bell into the center of the table and labeled it appropriately. This will ensure users understand how to access the waiter to order their meal.
+</p>
+
+<img src="" width="600px" height="600px" alt="Picture of Bell" />
+
+<p>
+Additionally, we understood the importance of being able to remove dishes from Shared Space. However, without buttons, we needed a new mechanism to enable this. Hence, we added a trash can in Shared Space. Unlike buttons, trash cans are a near-universal symbol of removal. Effectively, the trash can takes the place of the “reject” state from the previous representation.
+</p>
+
+<img src="" width="600px" height="600px" alt="<Picture of Trash Can>" />
+
+<p>
+Finally, we received feedback that it was difficult to navigate to different sections of the menu because it was hard to find the appropriate buttons. By moving the Section Selection buttons to the top of the menu rather than the bottom, this should be much clearer in this iteration.
+</p>
+<img src="" width="600px" height="600px" alt="<Picture of new Menu Sections>" />

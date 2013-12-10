@@ -36,13 +36,13 @@ Another critical miscommunication in our previous design was the use of states: 
 When first parsing the menu, dishes have a “+” button next to them. Pressing this button represents adding the dish into Shared Space, effectively placing the dish into the “proposed” state. Once in the Shared Space, dishes have a counter, representing the number of times the dish will be ordered. Located below the counter are an “+” button and a “-” button, enabling users to increment or decrement this counter. Once the counter is at “1” or higher, the dish turns green, effectively placing it into the “accepted” state. There is no implementation of the “maybe” state, as it was deemed too confusing. Without the “maybe” state, the coloring of states is now far easier to understand. Numbers are also now used to represent different states of the order beyond just acceptance, a new feature.
 </p>
 
-<img src="afterspace.png" width="600px" height="600px" alt="Pictures of Menu, Dish, and Dish with One or More Orders" />
+<img src="public/imgs/afterspace.png" width="600px" height="600px" alt="Pictures of Menu, Dish, and Dish with One or More Orders" />
 
 <p>
 With the removal of the individual inventory, we immediately realized we were removing the users’ ability to track what dishes he or she was interested in. This feature is vital for ensuring constructive conversations between users. To retain this valuable feature, we implemented the “Like” system. Once the dish is in Shared Space, its corresponding “+” button transforms into a “Like” button. Users can then “Like” the dish. These dishes then appear at the bottom of the menu in the users’ Like Space. This enables the users to keep track of which dishes he or she is interested without cluttering up Shared Space.
 </p>
 
-<img src="afterthink.png" width="600px" height="600px" alt="Pictures of Menu and Like Space" />
+<img src="public/imgs/afterthink.png" width="600px" height="600px" alt="Pictures of Menu and Like Space" />
 
 <p>One of the biggest issues we tackled during the creation of this design was whether to display the amount of “Likes” each dish has in Shared Space. Our fear is that it would essentially devolve into a voting system, discouraging discussion rather than promoting it. In order to test this hypothesis, we created a <a href="./#/usabilitystudy">usability experiment</a>.</p>
 

@@ -132,6 +132,10 @@ Site.config(function ($routeProvider) {
       templateUrl: 'templates/revision.html',
       controller: 'RevisionController'
     })
+    .when('/final', {
+      templateUrl: 'templates/final.html',
+      controller: 'FinalController'
+    })
     .otherwise({
       redirectTo: '/home'
     });

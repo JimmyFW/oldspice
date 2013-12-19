@@ -168,3 +168,10 @@ controllers.controller('RevisionController', ['$scope', function ($scope) {
     authors: "Kai Austin, Zachary Homans, James Wu"
   }
 }]);
+
+controllers.controller('FinalController', ['$scope', function ($scope) {
+  $scope.model = {
+    title: "Final Report",
+    authors: "Kai Austin, Zachary Homans, James Wu"
+  }
+}]);

@@ -1,0 +1,80 @@
+<h1>{{ model.title }}</h1>
+<h3 class="centered">{{ model.authors }}</h3>
+
+<h2>Introduction</h2>
+<p>
+	The Afterthink Engine is a new, streamlined interface that enhances the collaborative atmosphere of family-style dining in restaurants such as Chinese, Tapas, or Sushi. It takes an innovative approach on what it means to order as a group, and in doing so perfectly complements the already existing social environment.
+</p>
+
+<p>
+	The Afterthought is fundamentally rooted in a social process we’ve dubbed “Afterthought”, which consists of a group of restaurant patrons parsing the entire menu and individually picking dishes they’d personally enjoy before coming together and collaboratively constructing the final order as a group. This process is in direct opposition to “Forethought”, where individuals construct the final order as they parse the menu. Afterthought is often considered far more difficult, as it demands far higher mental responsibility to perform, requiring every member to keep track of both individual and group preferences rather than just the group’s.
+</p>
+
+<p>
+	To justify Afterthought as our design’s cornerstone, we had to deeply investigate our users’ needs, values, and requirements. This investigation, which involved a number of user interviews, resulted in the construction of five persona groups. Boiling the needs of these radically different groups down, we crafted three fundamental needs that applied to all users. Our design must:
+</p>
+
+<ul>
+<li>Complement the already-social collaboration and atmosphere of the family-style dining experience.</li>
+<li>Not distract users from the experience at hand. All actions should be simple to the extent that no time is wasted performing functions that could be used interacting with others.</li>
+<li>Enable easy access to valuable information, thus facilitating informed conversations between users.</li>
+<li>Our investigation is further outlined in our <a href="./#/needs"> Needs Analysis </a>. Using these needs as a stepping stone, we demonstrated the superiority of Afterthought over Forethought with respect to our user’s values.</li>
+</ul>
+
+<p>You can read more about the differences we’ve discovered between Afterthought and Forethought in our <a href="./#/freeze"> Design Development </a> and <a href="./#/refinement"> Design Refinement </a> documents.</p>
+
+<p>Due to the difficulty yet superiority of Afterthought, our goal in creating the Afterthink Engine was to construct an interface that encapsulates the critical components of Afterthought and delivers them to the users in a way that was unintrusive, simple, and valuable their social experience.</p>
+
+<h2>The Design</h2>
+
+<p>Taking a new perspective on family-style dining ordering required us to take a new perspective on the traditional dining experience as a whole: the physical design of our system is a testament to this. Designed to embody the essence of collaboration, it consists of a table outfitted with a large, central touchscreen known as Shared Space. As the center of the table, Shared Space serves as a workspace for groups to build their final order together. Because it is visible to all members of the group, visualizing important information and recording valuable thoughts is simple, easy, and collaborative in nature. To compliment Shared Space are a set of Individual Menus, which are located either on personal tablets or on the table itself as individual touchscreens. The Individual Menu serves as a normal menu, albeit one with enhanced informative power, and acts as an individual’s portal into the Shared Space.</p>
+
+<p>A patron’s experience will start with the Individual Menu. Upon sitting down, he is greeted by two sections. On the left side of the interface is the traditional menu, with dish names, descriptions, and prices. Easy-to-locate buttons on the top of the section enable him to move between sections of the menu in a flash. When an individual dish description is clicked, the right side of the interface appears, displaying both critical and additional information about the dish, some rarely found on a traditional menu such as a picture and various nutrition. Being digital enables easy access, storage, and visibility control of this valuable information that’s often overlooked in traditional menus. This information leads to more informed and valuable discussions between users, which is one of their key needs.</p>
+
+<img ng-src="public/imgs/demo_image.jpg" height="600px" alt="<<Picture of Individual Menu with Detailed View>>" />
+
+<p>When parsing the Individual Menu, if the patron finds a dish he believes the group should consider, he presses the “+” button located next to each dish. This automatically causes the dish to appear in Shared Space. Additionally, the dish also appears in his “Like” Inventory. If the user attempts to add a dish already in Shared Space, he will “Like” it instead, moving it into his “Like” Inventory. As such, the “Like” Inventory is a personal space to keep track of the dishes in Shared Space that the individual will enjoy, enabling him to easy calculate his satisfaction with the final order. If he is unsatisfied with his portion, he is encouraged to speak up until he is satisfied.</p>
+
+<img ng-src="public/imgs/demo_image.jpg" height="600px" alt="<<Picture of “Like” Inventory>>" />
+
+<p>After the group has parsed the Individual Menu and determined a set of dishes they’d like to discuss, they move into the Shared Space. In Shared Space, each dish is easily moved around, enable the entire table to interact with them. Each dish has a counter indicating the amount of the dish in the final order. If the dish’s counter is a “0”, the dish is shrunk as to indicate it is not currently part of the final order. Each dish also has a “Like” Counter, indicating the number of people who have the dish in their “Like” Inventory. Finally, Shared Space has two additional buttons. The first is a trash can that removes dishes from Shared Space when they are dragged on top of it. The second is a waiter bell that calls the waiter to pass along the final order.</p>
+
+<img ng-src="public/imgs/demo_image.jpg" height="600px" alt="Picture of Shared Space" />
+
+<p>As innovative as our design is, it’s significantly difficult to manufacture. However, testing still needed to occur, so we constructed a representative prototype using the tools available to us. Thus, the prototype consists of a pair of real-time web applications which can be used to simulate the Afterthink Engine.</p>
+
+<p>The first application, called just Afterthink Engine, is our representation of the Individual Menu. Any number of users can access the Afterthink Engine simultaneously via their browser. The second application, called AfterSpace, is our representation of the Shared Space. It’s designed to be run on one first generation iPad. By placing an AfterSpace-powered iPad at the center of a table surrounded by multiple computers accessing Afterthink Engine, we can successfully simulate and test our actual Afterthink Engine design. Both apps respond in real time to user input, allowing for instant user feedback and seamless facilitation of group discussion.</p>
+
+<img ng-src="public/imgs/demo_image.jpg" height="600px" alt="Picture of iPad and Computers" />
+
+<h2>The Features</h2>
+
+<p>Our final design contains a number of features which were results of critical changes from previous iterations of the design. You can read about these previous iterations on our <a href="./#/refinement"> Design Refinement </a> and <a href="./#/paperproto"> Paper Prototype </a> documents. Each of these final features demonstrates a key insight that we’ve learned over the course of our design’s development. By understanding them, several of our design decisions become very clear.</p>
+
+<h3>Genuine Central Shared Workspace</h3>
+<p>Our most substantial change was the removal of the Inventory in Shared Space and its subsequent transformation into interactive, touch-based central space. The draggability of the dishes reinforces their interactivity, which in turn creates a collaborative atmosphere. Because all users can interact with one another’s dish suggestions equally, they are not confined to their own selections, giving them a greater communal feeling. Shared Space also makes referencing dishes much easier, encouraging communication. By forcing users to use Shared Space to order, we highly emphasize them to working collaboratively, and because Afterthought is naturally more collaborative, users are passively drawn into using it without explicit cues. Thus, this new Shared Space tackles two core values at once: enhancing the social atmosphere and not distracting the users.</p>
+ 
+<h3>Simple and Understandable Design</h3>
+<p>In previous iterations, dishes in Shared Space were accompanied with a trio of buttons to help users manipulate the state of each dish. However, testers found these buttons confusing and had trouble correlating them to their function. Most prominent was the “?” button, which we intended to mark a dish as “Maybe”, but was consistently not interpreted as such. Additionally, because multiples of the same dish appeared multiple times in Shared Space, it quickly grew cluttered, creating a distracting environment. These issues went directly against users’ second core value.</p>
+
+<p>In our final design, we’ve removed the buttons and redesigned the dish icons in Shared Space. These icons are now more focused on determining how many of each dish in Shared Space will be part of the final order. This change effectively eliminates the confusing concept of state and instead grounds what is displayed in reality by only showing the hard numbers. We found that this was a much more natural mapping: what was on the table was what was in the final order. If a dish has a 0 on its counter, then it won’t be ordered, which is far easier to understand than the old “?” button. The newly added trash can serves a similar purpose, replacing the confusing “X” button. As natural mappings, users no longer need to consider what each component means and can instead focus on the social experience. </p>
+
+<h3>“Like” Counter</h3>
+<p>One of our internally controversial changes was the introduction of the “Like” System, where users could “Like” dishes currently in Shared Space. Although we knew we needed a way to enable users to track their individual contributions, we were unsure if displaying the number of “Like”s each dish had would enhance the social atmosphere or hinder it. To that end, we developed a user study, documented <a href="./#/usabilitystudy"> here </a>. Due to time constraints and difficulties in finding large testing groups, we were unable to perform it. However, we went back and pondered deeply about the problem, eventually deciding to include the “Like” Counter. We felt that users would be familiar enough with the system to not abuse it, while also helping less confident individuals speak up, enabling equal collaboration. And in the event the group wants to finish the Ordering Phase as fast as possible, it can serve as a simple voting system, which let’s them focus on a different social experience if they choose. Overall, enabling this feature only provides benefits for those who want them and doesn’t affect others, making it a strong addition to the interface.</p>
+
+<h3>“Like” Inventory</h3>
+<p>Along with the “Like” Counter, the “Like” Inventory was introduced as part of the “Like” System. The “Like” Inventory serves the valuable purpose of enabling an individual to keep track of the dishes in Shared Space that he personally wants. Such a space existed in previous iterations, as we’ve explained its importance in ensuring user satisfaction with the meal, but it was located in Shared Space instead. After discussion, we determined that although it served a purpose there, it created far too much clutter. Having this information was far more valuable to the individual than to the group, so naturally it should be in the user’s personal area.</p>
+
+<h2>The Limitations</h2>
+
+<h3>Waiters: The Forgotten Users</h3>
+<p>While the Afterthink Engine well serves patrons’ needs and values, there’s another user group that we all but failed to consider: waiters. Waiters are an essential part of the dining experience, and similar products in the past have raised flags as to their impact on the profession. Although we should have considered all stakeholders during our design, we chose to focus primarily on our main user. While we believe that helped us create a very focused and refined interface, we definitely limited ourselves by not fully considering them. In extended work, we’d expand our focus to include this user group in our considerations.</p>
+
+<h3>Food Restrictions</h3>
+<p>One of our original goals in our Needs Analysis was creating a system that focused heavily on equalizing those with with food restrictions with those without. Although several of our final features contained remnants of this aspect of our design, such as the “Like” System, our final design overall lacks that functionality. It’s sad for us to see one of our original principles fall by the wayside over the course of the project, but we believed it was a necessary step considering our time restraints and the importance of creating a system that worked for the majority of users. If we were given more time to work on features, we believe we’d mainly focus on incorporating our original ideas so that our system was far more responsive to individual restrictions.</p>
+
+<h3>Designing for Afterthought</h3>
+<p>Over the course of the project, we began to lose sight of our personas. Although we referenced them a few times during key design and feature discussions, many of these fell by the wayside. What we ended up with was system heavily focused on Afterthought and not for a particular persona group. Although this helped us address their extremely varied nature in a simple way, many features and values important to each individual group was ultimately lost. For example, we planned to include a meal pre-loader system for repeat customers like the Yang Family, but it never came into fruition. Overall, we limited ourselves by refusing the address the specific needs of our persona groups. Incorporating these features into our system could give in far more power for specific users for little extra effort.</p>
+
+<h3>Turning Dishes</h3>
+<p>On the technical sides, there were numerous limitations caused by our choice of framework. One of the largest was the inability to turn dishes in Shared Space. This meant that all dishes were oriented in the same direction which poses a difficulty for half of the table, as all of the words and icons are flipped upside down. Understandably, this makes the system much harder to use. Had we had more time, we would have ironed out these technical issues to make the system far more usable on a technical level.</p>

@@ -1,5 +1,28 @@
+body div h1 h2 h3 {
+	margin: 0;
+	padding: 0;
+}
+
 #container {
 	margin-left: 50px;
+}
+
+.topbar {
+	background: #333333;
+	border: 1px #000000;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	height: 55px;
+}
+
+#wrapper {
+	margin: 0;
+	padding: 0;
 }
 
 .item {
